@@ -19,7 +19,7 @@ namespace Borderless
         private HeaderButton[] allButtons;
 
         public Size ButtonSize { get; } = new Size(SystemInformation.CaptionButtonSize.Width,
-            SystemInformation.CaptionButtonSize.Height + 5);
+            SystemInformation.CaptionButtonSize.Height + 7);
 
 
         public enum MouseState
@@ -72,7 +72,13 @@ namespace Borderless
             InitBorder();
 
             TitleLabel.MouseDown += TitleLabel_MouseDown;
-            TitleLabel.MouseUp += (s, e) => { if (e.Button == MouseButtons.Right && TitleLabel.ClientRectangle.Contains(e.Location)) ShowSystemMenu(MouseButtons); };
+            TitleLabel.MouseUp += (s, e) =>
+            {
+                if (e.Button == MouseButtons.Right && TitleLabel.ClientRectangle.Contains(e.Location))
+                    ShowSystemMenu(MouseButtons);
+
+                MaximumSize = Screen.FromControl(this).WorkingArea.Size;
+            };
             TitleLabel.Text = Text;
             TextChanged += (s, e) => TitleLabel.Text = Text;
 

@@ -12,8 +12,6 @@ namespace MO_KHNUE
         public DepartmentForm()
         {
             InitializeComponent();
-            var g = this.CreateGraphics();
-            g.DrawString("123", label1.Font = UIFont.GetUIFont(), Brushes.AliceBlue, 50, 50);
         }
 
         public DepartmentForm(Department department)
@@ -24,7 +22,7 @@ namespace MO_KHNUE
                 LinkLabel label = new LinkLabel();
                 label.Size = new Size(300, 20);
                 label.Text = item.Name;
-                label.LinkClicked += (s, e) => MainForm.instance.ShowForm(new MemberForm(item));
+                label.LinkClicked += (s, e) => MainForm.instance.ShowContent(new MemberInfoControl(item));
                 membersFlowLayout.Controls.Add(label);
 
             }
@@ -39,7 +37,7 @@ namespace MO_KHNUE
 
         private void headLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MainForm.instance.ShowForm(new MemberForm(_department?.Head));
+            MainForm.instance.ShowContent(new MemberInfoControl(_department?.Head));
         }
     }
 }

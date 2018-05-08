@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using static MO_KHNUE.Database;
 using StackExchange.Redis;
 using MO_KHNUE.Entities;
+using MO_KHNUE.Properties;
 
 namespace MO_KHNUE
 {
@@ -20,7 +21,7 @@ namespace MO_KHNUE
         {
 
             InitializeComponent();
-            /*
+
             var artem = new Member()
             {
                 Name = "Artem",
@@ -29,7 +30,8 @@ namespace MO_KHNUE
                 Email = "artemium97@gmail.com",
                 Phone = "380958338701",
                 Group = "6.04.51.15.01",
-                BirthDay = new DateTime(1997, 5, 30)
+                BirthDay = new DateTime(1997, 5, 30),
+                Photo = Image.FromFile(@"C:\Users\super\Downloads\Telegram Desktop\boy1-1.png")
             };
 
             var ann = new Member()
@@ -77,9 +79,16 @@ namespace MO_KHNUE
 
 
             db.Departments.Add(pm);
-            db.Departments.Add(pr);*/
+            db.Departments.Add(pr);
 
-            db = DBContext.LoadDBContext();
+            try
+            {
+                db = DBContext.LoadDBContext();
+            }
+            catch
+            {
+                Console.Error.Write("Can't connect to database!");
+            }
 
             db.SaveChanges();
 
@@ -103,7 +112,7 @@ namespace MO_KHNUE
 
                 b.Click += (e, s) =>
                 {
-                    MainForm.instance.ShowForm(new DepartmentForm(item));
+                    MainForm.instance.ShowContent(new DepartmentForm(item));
                 };
 
                 flowLayoutPanel1.Controls.Add(b);

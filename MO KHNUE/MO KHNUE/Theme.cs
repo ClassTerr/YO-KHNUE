@@ -23,8 +23,12 @@ namespace MO_KHNUE
 
         public static Color InactiveBorderColor => Color.FromArgb(131, 131, 131);
 
-        public static Color ActiveTextColor => Color.FromArgb(68, 68, 68);
+        public static Color ActiveTextColor => Color.Black;
 
         public static Color InactiveTextColor => Color.FromArgb(177, 177, 177);
+
+        public static Color DefaultBackColor => Color.White;
+
+        public static Color AccentBackColor => Color.FromArgb(255, 55, 106);
     }
 }

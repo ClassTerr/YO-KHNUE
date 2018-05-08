@@ -15,55 +15,40 @@ namespace MO_KHNUE
     {
         public static MainForm instance = null;
         private Point startPoint = new Point(0, 0);
-        public Stack<Form> windowsStack = new Stack<Form>();
+        public Stack<Control> contentStack = new Stack<Control>();
 
         public MainForm()
         {
             InitializeComponent();
             instance = this;
-            InitMenu(null, null);
             this.BackButton.Click += (s, a) => BackButtonClick();
         }
 
-        void InitMenu(object sender, EventArgs e)
+        public void ShowContent(Control contentControl)
         {
-            for (int i = 0; i < menuPanel.Controls.Count; i++)
+            if (contentControl is Form frm)
             {
-                Control item = menuPanel.Controls[i];
-
-                Padding pad = menuPanel.Padding;
-                int targetSize = menuPanel.Width - pad.Left - pad.Right;
-                item.Size = new Size(targetSize, targetSize);
-                item.Left = pad.Left;
-                item.Top = item.Padding.Top * (i + 1) + i * item.Padding.Bottom + i * targetSize;
+                frm.TopLevel = false;
+                frm.FormBorderStyle = FormBorderStyle.None;
             }
+
+            controlPanel.Controls.Add(contentControl);
+            contentControl.Dock = DockStyle.Fill;
+            contentControl.Show();
+            contentControl.BringToFront();
+            contentStack.Push(contentControl);
         }
 
-        void InitButtonEffects(Control c, Color col)
+        public void CloseContent(Control control)
         {
-            Color dark = ControlPaint.Dark(col, 30);
+            controlPanel.Controls.Remove(control);
+            if (control is Form frm)
+            {
+                frm.Close();
+            }
 
-            c.MouseEnter += (s, e) => (s as Control).BackColor = col;
-            c.MouseLeave += (s, e) => (s as Control).BackColor = Color.Transparent;
-            c.MouseDown += (s, e) => (s as Control).BackColor = dark;
-            c.MouseUp += (s, e) => (s as Control).BackColor = col;
-        }
-
-        public void ShowForm(Form form)
-        {
-            form.TopLevel = false;
-            controlPanel.Controls.Add(form);
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            form.Show();
-            form.BringToFront();
-            windowsStack.Push(form);
-        }
-
-        public void CloseForm(Form form)
-        {
-            form.Close();
-            controlPanel.Controls.Remove(form);
+            control.Visible = false;
+            control.Dispose();
         }
 
         private void MenuItem_MouseEnter(object sender, EventArgs e)
@@ -81,36 +66,42 @@ namespace MO_KHNUE
 
             ClearWindows();
 
-            ShowForm(new OverviewForm());
+            ShowContent(new OverviewForm());
         }
 
         public void ClearWindows()
         {
-            while (windowsStack.Count > 0)
+            while (contentStack.Count > 0)
             {
-                controlPanel.Controls.Remove(windowsStack.Pop());
+                controlPanel.Controls.Remove(contentStack.Pop());
             }
         }
 
         private void BackButtonClick()
         {
-            if (windowsStack.Count == 0)
+            if (contentStack.Count == 0)
                 return;
 
-            var form = windowsStack.Pop();
-            CloseForm(form);
+            var form = contentStack.Pop();
+            CloseContent(form);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             //ClearWindows();
 
-            ShowForm(new DepartmentForm());
+            ShowContent(new DepartmentForm());
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            ShowContent(new MembersControl());
         }
     }
 }

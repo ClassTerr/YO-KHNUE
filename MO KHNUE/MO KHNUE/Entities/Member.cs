@@ -26,6 +26,7 @@ namespace MO_KHNUE.Entities
         public int Course;
         public string Email;
         public DateTime BirthDay;
+        public Image Photo;
 
         public override string ToString()
         {

@@ -17,7 +17,6 @@ namespace MO_KHNUE
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
-            
         }
     }
 }

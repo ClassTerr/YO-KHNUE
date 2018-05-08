@@ -75,17 +75,35 @@
     <Compile Include="HeaderButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="IconButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IconButtonSmall.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="MemberInfoControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MemberForm.Designer.cs">
-      <DependentUpon>MemberForm.cs</DependentUpon>
+    <Compile Include="MemberInfoControl.Designer.cs">
+      <DependentUpon>MemberInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberEditControl.Designer.cs">
+      <DependentUpon>MemberEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MembersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MembersControl.Designer.cs">
+      <DependentUpon>MembersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuBar.cs">
       <SubType>UserControl</SubType>
@@ -94,6 +112,12 @@
       <DependentUpon>MenuBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Native.cs" />
+    <Compile Include="PhotoComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhotoComponent.Designer.cs">
+      <DependentUpon>PhotoComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Random.cs" />
     <Compile Include="Entities\TaskDescription.cs" />
     <Compile Include="Entities\Task.cs" />
@@ -110,14 +134,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Member.cs" />
-    <Compile Include="StyledForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StyledForm.Designer.cs">
-      <DependentUpon>StyledForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Theme.cs" />
     <Compile Include="UIFont.cs" />
+    <Compile Include="UserBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserBlock.Designer.cs">
+      <DependentUpon>UserBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="BorderlessForm.resx">
       <DependentUpon>BorderlessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,14 +153,24 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberForm.resx">
-      <DependentUpon>MemberForm.cs</DependentUpon>
+    <EmbeddedResource Include="MemberInfoControl.resx">
+      <DependentUpon>MemberInfoControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberEditControl.resx">
+      <DependentUpon>MemberEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembersControl.resx">
+      <DependentUpon>MembersControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverviewForm.resx">
       <DependentUpon>OverviewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoComponent.resx">
+      <DependentUpon>PhotoComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,8 +182,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StyledForm.resx">
-      <DependentUpon>StyledForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserBlock.resx">
+      <DependentUpon>UserBlock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -179,19 +214,10 @@
     <None Include="Resources\MO LOGO.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Maximize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Minimize.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\UIFont.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserImagePlaceholder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

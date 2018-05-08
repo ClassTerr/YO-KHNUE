@@ -19,7 +19,14 @@ namespace MO_KHNUE
 
         public static DBContext LoadDBContext()
         {
-            var context = JsonConvert.DeserializeObject<DBContext>(GetValue("Context"));
+            DBContext context = null;
+            string val = GetValue("Context");
+
+            if (val != null)
+            {
+                context = JsonConvert.DeserializeObject<DBContext>(GetValue("Context"));
+            }
+
             if (context == null)
             {
                 throw new JsonException("Cannot get context");

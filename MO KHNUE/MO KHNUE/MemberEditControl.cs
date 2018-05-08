@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MO_KHNUE.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,15 +11,15 @@ using System.Windows.Forms;
 
 namespace MO_KHNUE.Entities
 {
-    public partial class MemberForm : Form
+    public partial class MemberControl : UserControl
     {
         private Member _member = null;
-        public MemberForm()
+        public MemberControl()
         {
             InitializeComponent();
         }
 
-        public MemberForm(Member member)
+        public MemberControl(Member member)
         {
             InitializeComponent();
             InitMember(member);
@@ -27,6 +28,7 @@ namespace MO_KHNUE.Entities
         public void ClearInfo()
         {
             outputBirthDay.Text = outputEmail.Text = outputGroup.Text = outputName.Text = outputPhone.Text = outputSurname.Text = "";
+            photo.Image = Resources.UserImagePlaceholder;
         }
 
         public void InitMember(Member member)
@@ -44,6 +46,10 @@ namespace MO_KHNUE.Entities
             outputName.Text = member.Name;
             outputPhone.Text = member.Phone;
             outputSurname.Text = member.Surname;
+
+            if (member.Photo == null)
+                photo.Image = Utils.ClipToCircle(Resources.UserImagePlaceholder);
+            else photo.Image = Utils.ClipToCircle(member.Photo);
         }
     }
 }

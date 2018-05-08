@@ -63,26 +63,6 @@ namespace MO_KHNUE.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Back {
-            get {
-                object obj = ResourceManager.GetObject("Back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Close {
-            get {
-                object obj = ResourceManager.GetObject("Close", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Departments {
             get {
                 object obj = ResourceManager.GetObject("Departments", resourceCulture);
@@ -103,29 +83,9 @@ namespace MO_KHNUE.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Maximize {
-            get {
-                object obj = ResourceManager.GetObject("Maximize", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Members {
             get {
                 object obj = ResourceManager.GetObject("Members", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Minimize {
-            get {
-                object obj = ResourceManager.GetObject("Minimize", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -157,6 +117,16 @@ namespace MO_KHNUE.Properties {
             get {
                 object obj = ResourceManager.GetObject("UI", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UserImagePlaceholder {
+            get {
+                object obj = ResourceManager.GetObject("UserImagePlaceholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

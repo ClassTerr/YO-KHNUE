@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Drawing.Text;
+using MO_KHNUE.Properties;
 
-namespace MO_KHNUE
+namespace Borderless
 {
     public static class UIFont
     {
@@ -20,23 +21,26 @@ namespace MO_KHNUE
 
         private static PrivateFontCollection fonts = new PrivateFontCollection();
 
-        static Font myFont;
+        static Dictionary<float, Font> myFonts = new Dictionary<float, Font>();
 
-        public static Font GetUIFont()
+        public static Font GetUIFont(float size = 30)
         {
-            if (myFont != null)
-                return myFont;
-
-            byte[] fontData = Properties.Resources.UI;
+            Font font;
+            myFonts.TryGetValue(size, out font);
+            if (font != null)
+                return font;
+            
+            byte[] fontData = Resources.UI;
             IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
             System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
             uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.UI.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.UI.Length, IntPtr.Zero, ref dummy);
+            fonts.AddMemoryFont(fontPtr, Resources.UI.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Resources.UI.Length, IntPtr.Zero, ref dummy);
             System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
-            myFont = new Font(fonts.Families[0], 16.0F);
-            return myFont;
+            font = new Font(fonts.Families[0], size);
+            myFonts.Add(size, font);
+            return font;
         }
     }
 }
