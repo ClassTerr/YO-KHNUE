@@ -1,0 +1,23 @@
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\MO KHNUE.exe.config
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\MO KHNUE.exe
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\MO KHNUE.pdb
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\StackExchange.Redis.dll
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\StackExchange.Redis.xml
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\Borderless.BorderlessForm.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.DepartmentForm.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MainForm.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.OverviewForm.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MenuBar.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Properties.Resources.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csproj.GenerateResource.cache
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csproj.CoreCompileInputs.cache
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csproj.CopyComplete
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.exe
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.pdb
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MembersControl.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberInfoControl.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberControl.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.PhotoComponent.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.UserBlock.resources
