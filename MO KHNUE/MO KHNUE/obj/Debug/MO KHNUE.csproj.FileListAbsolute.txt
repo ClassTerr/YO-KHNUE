@@ -20,4 +20,6 @@ C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Me
 C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberInfoControl.resources
 C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberControl.resources
 C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.PhotoComponent.resources
-C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.UserBlock.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MemberBlock.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MemberBlocksList.resources
+C:\Users\super\Documents\GitHub\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csprojResolveAssemblyReference.cache

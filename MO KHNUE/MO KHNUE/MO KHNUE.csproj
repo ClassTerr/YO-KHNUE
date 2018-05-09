@@ -105,6 +105,12 @@
     <Compile Include="MembersControl.Designer.cs">
       <DependentUpon>MembersControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="MemberBlocksList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberBlocksList.Designer.cs">
+      <DependentUpon>MemberBlocksList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,11 +142,11 @@
     <Compile Include="Entities\Member.cs" />
     <Compile Include="Theme.cs" />
     <Compile Include="UIFont.cs" />
-    <Compile Include="UserBlock.cs">
+    <Compile Include="MemberBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserBlock.Designer.cs">
-      <DependentUpon>UserBlock.cs</DependentUpon>
+    <Compile Include="MemberBlock.Designer.cs">
+      <DependentUpon>MemberBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="BorderlessForm.resx">
@@ -163,6 +169,9 @@
     <EmbeddedResource Include="MembersControl.resx">
       <DependentUpon>MembersControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MemberBlocksList.resx">
+      <DependentUpon>MemberBlocksList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OverviewForm.resx">
       <DependentUpon>OverviewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,8 +191,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserBlock.resx">
-      <DependentUpon>UserBlock.cs</DependentUpon>
+    <EmbeddedResource Include="MemberBlock.resx">
+      <DependentUpon>MemberBlock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

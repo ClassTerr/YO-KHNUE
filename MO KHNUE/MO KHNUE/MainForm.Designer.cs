@@ -118,10 +118,10 @@
             this.menuPanel.Controls.Add(this.pictureBox3);
             this.menuPanel.Controls.Add(this.pictureBox4);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuPanel.Location = new System.Drawing.Point(2, 31);
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Padding = new System.Windows.Forms.Padding(4);
-            this.menuPanel.Size = new System.Drawing.Size(62, 467);
+            this.menuPanel.Size = new System.Drawing.Size(62, 500);
             this.menuPanel.TabIndex = 14;
             // 
             // controlPanel
@@ -129,10 +129,10 @@
             this.controlPanel.BackColor = System.Drawing.Color.DimGray;
             this.controlPanel.Controls.Add(this.logoPictureBox);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlPanel.Location = new System.Drawing.Point(64, 31);
+            this.controlPanel.Location = new System.Drawing.Point(62, 0);
             this.controlPanel.Margin = new System.Windows.Forms.Padding(2);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(844, 467);
+            this.controlPanel.Size = new System.Drawing.Size(848, 500);
             this.controlPanel.TabIndex = 15;
             // 
             // logoPictureBox
@@ -143,7 +143,7 @@
             this.logoPictureBox.Location = new System.Drawing.Point(0, 0);
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(844, 467);
+            this.logoPictureBox.Size = new System.Drawing.Size(848, 500);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
