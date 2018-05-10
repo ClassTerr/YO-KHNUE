@@ -18,13 +18,13 @@ namespace MO_KHNUE.Entities
         public MemberInfoControl()
         {
             InitializeComponent();
-            headPanel.BackColor = AccentBackColor;
+            headPanel.BackColor = AccentElementBackgorundColor;
         }
 
         public MemberInfoControl(Member member)
         {
             InitializeComponent();
-            headPanel.BackColor = AccentBackColor;
+            headPanel.BackColor = AccentElementBackgorundColor;
 
             InitMember(member);
         }
@@ -54,6 +54,11 @@ namespace MO_KHNUE.Entities
                 photo.Image = Utils.ClipToCircle(Resources.UserImagePlaceholder);
             else photo.Image = Utils.ClipToCircle(member.Photo);*/
             photo.Image = Resources.UserImagePlaceholder;
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            MainForm.instance.ShowContent(new MemberControl(_member));
         }
     }
 }

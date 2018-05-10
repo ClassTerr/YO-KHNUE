@@ -32,10 +32,11 @@
             // 
             // MemberBlocksList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MemberBlocksList";
-            this.Size = new System.Drawing.Size(838, 327);
+            this.Size = new System.Drawing.Size(1117, 402);
             this.Resize += new System.EventHandler(this.Form_Resize);
             this.ResumeLayout(false);
 

@@ -10,63 +10,65 @@ using System.Windows.Forms;
 using MO_KHNUE.Entities;
 using static MO_KHNUE.Theme;
 using System.Runtime.InteropServices;
+using MO_KHNUE.Design;
 
 namespace MO_KHNUE
 {
-    public partial class MemberBlock : UserControl
+    public partial class MemberBlock : SolidComponent
     {
         public Member CurrentMember { get; set; }
-
-        void Form_ControlAdded(object sender, ControlEventArgs e)
-        {
-            e.Control.MouseEnter += new EventHandler(Control_MouseEnter);
-            e.Control.MouseLeave += new EventHandler(Control_MouseLeave);
-        }
-
-        void Form_ControlRemoved(object sender, ControlEventArgs e)
-        {
-            e.Control.MouseEnter -= new EventHandler(Control_MouseEnter);
-            e.Control.MouseLeave -= new EventHandler(Control_MouseLeave);
-        }
+        public new event EventHandler CustomMouseClick;
 
         public MemberBlock()
         {
-            InitWindow();
+            CustomMouseEnter += Control_MouseEnter;
+            CustomMouseLeave += Control_MouseLeave;
+            base.CustomMouseClick += Control_MouseClick;
+
             InitializeComponent();
+
+            ForeColor = ActiveTextColor;
+            BackColor = DefaultElementBackgorundColor;
         }
         public MemberBlock(Member member)
         {
-            InitWindow();
-            InitializeComponent();
-        }
+            CustomMouseEnter += Control_MouseEnter;
+            CustomMouseLeave += Control_MouseLeave;
+            base.CustomMouseClick += Control_MouseClick;
 
-        private void InitWindow()
-        {
-            ControlAdded += new ControlEventHandler(Form_ControlAdded);
-            ControlRemoved += new ControlEventHandler(Form_ControlRemoved);
-            MouseEnter += new EventHandler(Control_MouseEnter);
-            MouseLeave += new EventHandler(Control_MouseLeave);
+            InitializeComponent();
+
             ForeColor = ActiveTextColor;
-            BackColor = NormalBackColor;
+            BackColor = DefaultElementBackgorundColor;
+            InitMember(member);
         }
 
         public void InitMember(Member member)
         {
             CurrentMember = member;
-            photoComponent1.SetImage(member.Photo);
             label1.Text = member.Name + " " + member.Surname;
+
+            Image photo = member.Photo;
+            if (photo != null)
+                photo = Utils.ClipToCircle(member.Photo);
+            photoComponent1.SetImage(photo);
         }
-        
+
         private void Control_MouseEnter(object sender, EventArgs e)
         {
-                ForeColor = HoverTextColor;
-                BackColor = HoverBackColor;
+            ForeColor = HoveredDefaultElementForeColor;
+            BackColor = HoveredDefaultElementBackgorundColor;
         }
 
         private void Control_MouseLeave(object sender, EventArgs e)
         {
-                ForeColor = ActiveTextColor;
-                BackColor = NormalBackColor;
+            ForeColor = DefaultElementForeColor;
+            BackColor = DefaultElementBackgorundColor;
+        }
+
+        private void Control_MouseClick(object sender, EventArgs e)
+        {
+            CustomMouseClick?.Invoke(sender, e);
         }
     }
 }

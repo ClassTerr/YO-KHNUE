@@ -153,7 +153,7 @@
             this.outputBirthDay.Location = new System.Drawing.Point(154, 250);
             this.outputBirthDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputBirthDay.Name = "outputBirthDay";
-            this.outputBirthDay.Size = new System.Drawing.Size(191, 27);
+            this.outputBirthDay.Size = new System.Drawing.Size(191, 32);
             this.outputBirthDay.TabIndex = 5;
             this.outputBirthDay.Text = "[]";
             // 
@@ -163,7 +163,7 @@
             this.outputEmail.Location = new System.Drawing.Point(154, 200);
             this.outputEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputEmail.Name = "outputEmail";
-            this.outputEmail.Size = new System.Drawing.Size(191, 27);
+            this.outputEmail.Size = new System.Drawing.Size(191, 32);
             this.outputEmail.TabIndex = 3;
             this.outputEmail.Text = "[]";
             // 
@@ -173,7 +173,7 @@
             this.outputPhone.Location = new System.Drawing.Point(154, 150);
             this.outputPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputPhone.Name = "outputPhone";
-            this.outputPhone.Size = new System.Drawing.Size(191, 27);
+            this.outputPhone.Size = new System.Drawing.Size(191, 32);
             this.outputPhone.TabIndex = 3;
             this.outputPhone.Text = "[]";
             // 
@@ -183,7 +183,7 @@
             this.outputGroup.Location = new System.Drawing.Point(154, 100);
             this.outputGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputGroup.Name = "outputGroup";
-            this.outputGroup.Size = new System.Drawing.Size(191, 27);
+            this.outputGroup.Size = new System.Drawing.Size(191, 32);
             this.outputGroup.TabIndex = 3;
             this.outputGroup.Text = "[]";
             // 
@@ -193,7 +193,7 @@
             this.outputName.Location = new System.Drawing.Point(154, 0);
             this.outputName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputName.Name = "outputName";
-            this.outputName.Size = new System.Drawing.Size(191, 27);
+            this.outputName.Size = new System.Drawing.Size(191, 32);
             this.outputName.TabIndex = 2;
             this.outputName.Text = "[]";
             // 
@@ -203,7 +203,7 @@
             this.outputSurname.Location = new System.Drawing.Point(154, 50);
             this.outputSurname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputSurname.Name = "outputSurname";
-            this.outputSurname.Size = new System.Drawing.Size(191, 27);
+            this.outputSurname.Size = new System.Drawing.Size(191, 32);
             this.outputSurname.TabIndex = 3;
             this.outputSurname.Text = "[]";
             // 
@@ -222,7 +222,7 @@
             // 
             // MemberControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
@@ -231,7 +231,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MemberControl";
-            this.Size = new System.Drawing.Size(717, 445);
+            this.Size = new System.Drawing.Size(717, 596);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();

@@ -32,19 +32,19 @@
             this.outputPhone = new System.Windows.Forms.Label();
             this.outputGroup = new System.Windows.Forms.Label();
             this.headPanel = new System.Windows.Forms.Panel();
+            this.editButton = new Borderless.Buttons.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconButtonSmall2 = new MO_KHNUE.IconButtonSmall();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.iconButtonSmall1 = new MO_KHNUE.IconButtonSmall();
             this.panel5 = new System.Windows.Forms.Panel();
             this.outputEmail = new System.Windows.Forms.Label();
+            this.iconButtonSmall4 = new MO_KHNUE.IconButtonSmall();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.iconButtonSmall3 = new MO_KHNUE.IconButtonSmall();
             this.outputBirthDay = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.outputName = new System.Windows.Forms.Label();
-            this.iconButtonSmall2 = new MO_KHNUE.IconButtonSmall();
-            this.iconButtonSmall4 = new MO_KHNUE.IconButtonSmall();
-            this.iconButtonSmall1 = new MO_KHNUE.IconButtonSmall();
-            this.iconButtonSmall3 = new MO_KHNUE.IconButtonSmall();
-            this.iconButton1 = new Borderless.Buttons.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.headPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,7 +75,7 @@
             this.outputPhone.Location = new System.Drawing.Point(174, 1);
             this.outputPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputPhone.Name = "outputPhone";
-            this.outputPhone.Size = new System.Drawing.Size(177, 25);
+            this.outputPhone.Size = new System.Drawing.Size(229, 32);
             this.outputPhone.TabIndex = 10;
             this.outputPhone.Text = "+38 (012) 345 67 89";
             this.outputPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,20 +88,33 @@
             this.outputGroup.Location = new System.Drawing.Point(178, 3);
             this.outputGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputGroup.Name = "outputGroup";
-            this.outputGroup.Size = new System.Drawing.Size(118, 25);
+            this.outputGroup.Size = new System.Drawing.Size(152, 32);
             this.outputGroup.TabIndex = 10;
             this.outputGroup.Text = "6.04.51.15.01";
             this.outputGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // headPanel
             // 
-            this.headPanel.Controls.Add(this.iconButton1);
+            this.headPanel.Controls.Add(this.editButton);
             this.headPanel.Controls.Add(this.photo);
             this.headPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headPanel.Location = new System.Drawing.Point(0, 0);
             this.headPanel.Name = "headPanel";
             this.headPanel.Size = new System.Drawing.Size(496, 247);
             this.headPanel.TabIndex = 12;
+            // 
+            // editButton
+            // 
+            this.editButton.AutoSize = true;
+            this.editButton.Font = new System.Drawing.Font("UI", 30F);
+            this.editButton.ForeColor = System.Drawing.Color.Black;
+            this.editButton.Location = new System.Drawing.Point(0, 0);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(72, 50);
+            this.editButton.TabIndex = 8;
+            this.editButton.Text = "";
+            this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.editButton.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // panel2
             // 
@@ -113,6 +126,19 @@
             this.panel2.Size = new System.Drawing.Size(496, 40);
             this.panel2.TabIndex = 0;
             // 
+            // iconButtonSmall2
+            // 
+            this.iconButtonSmall2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSmall2.AutoSize = true;
+            this.iconButtonSmall2.Font = new System.Drawing.Font("UI", 20F);
+            this.iconButtonSmall2.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall2.Location = new System.Drawing.Point(120, 3);
+            this.iconButtonSmall2.Name = "iconButtonSmall2";
+            this.iconButtonSmall2.Size = new System.Drawing.Size(45, 34);
+            this.iconButtonSmall2.TabIndex = 11;
+            this.iconButtonSmall2.Text = "";
+            this.iconButtonSmall2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.outputPhone);
@@ -122,6 +148,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(496, 40);
             this.panel4.TabIndex = 2;
+            // 
+            // iconButtonSmall1
+            // 
+            this.iconButtonSmall1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSmall1.AutoSize = true;
+            this.iconButtonSmall1.Font = new System.Drawing.Font("UI", 20F);
+            this.iconButtonSmall1.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall1.Location = new System.Drawing.Point(120, 3);
+            this.iconButtonSmall1.Name = "iconButtonSmall1";
+            this.iconButtonSmall1.Size = new System.Drawing.Size(49, 34);
+            this.iconButtonSmall1.TabIndex = 11;
+            this.iconButtonSmall1.Text = "";
+            this.iconButtonSmall1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel5
             // 
@@ -141,10 +180,23 @@
             this.outputEmail.Location = new System.Drawing.Point(174, 0);
             this.outputEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputEmail.Name = "outputEmail";
-            this.outputEmail.Size = new System.Drawing.Size(212, 25);
+            this.outputEmail.Size = new System.Drawing.Size(269, 32);
             this.outputEmail.TabIndex = 14;
             this.outputEmail.Text = "example@example.com";
             this.outputEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // iconButtonSmall4
+            // 
+            this.iconButtonSmall4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSmall4.AutoSize = true;
+            this.iconButtonSmall4.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonSmall4.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall4.Location = new System.Drawing.Point(117, -4);
+            this.iconButtonSmall4.Name = "iconButtonSmall4";
+            this.iconButtonSmall4.Size = new System.Drawing.Size(58, 55);
+            this.iconButtonSmall4.TabIndex = 11;
+            this.iconButtonSmall4.Text = "@";
+            this.iconButtonSmall4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -156,6 +208,19 @@
             this.panel3.Size = new System.Drawing.Size(496, 40);
             this.panel3.TabIndex = 16;
             // 
+            // iconButtonSmall3
+            // 
+            this.iconButtonSmall3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSmall3.AutoSize = true;
+            this.iconButtonSmall3.Font = new System.Drawing.Font("UI", 20F);
+            this.iconButtonSmall3.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall3.Location = new System.Drawing.Point(120, 3);
+            this.iconButtonSmall3.Name = "iconButtonSmall3";
+            this.iconButtonSmall3.Size = new System.Drawing.Size(49, 34);
+            this.iconButtonSmall3.TabIndex = 11;
+            this.iconButtonSmall3.Text = "";
+            this.iconButtonSmall3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // outputBirthDay
             // 
             this.outputBirthDay.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -164,7 +229,7 @@
             this.outputBirthDay.Location = new System.Drawing.Point(178, 1);
             this.outputBirthDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.outputBirthDay.Name = "outputBirthDay";
-            this.outputBirthDay.Size = new System.Drawing.Size(100, 25);
+            this.outputBirthDay.Size = new System.Drawing.Size(129, 32);
             this.outputBirthDay.TabIndex = 13;
             this.outputBirthDay.Text = "01.01.1970";
             this.outputBirthDay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +250,7 @@
             // outputName
             // 
             this.outputName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.outputName.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.outputName.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.outputName.Location = new System.Drawing.Point(0, 247);
             this.outputName.Name = "outputName";
             this.outputName.Size = new System.Drawing.Size(496, 113);
@@ -193,73 +258,9 @@
             this.outputName.Text = "Name Surname";
             this.outputName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // iconButtonSmall2
-            // 
-            this.iconButtonSmall2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonSmall2.AutoSize = true;
-            this.iconButtonSmall2.Font = new System.Drawing.Font("UI", 20F);
-            this.iconButtonSmall2.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonSmall2.Location = new System.Drawing.Point(143, 3);
-            this.iconButtonSmall2.Name = "iconButtonSmall2";
-            this.iconButtonSmall2.Size = new System.Drawing.Size(36, 27);
-            this.iconButtonSmall2.TabIndex = 11;
-            this.iconButtonSmall2.Text = "";
-            this.iconButtonSmall2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButtonSmall4
-            // 
-            this.iconButtonSmall4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonSmall4.AutoSize = true;
-            this.iconButtonSmall4.Font = new System.Drawing.Font("Viner Hand ITC", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonSmall4.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonSmall4.Location = new System.Drawing.Point(140, -4);
-            this.iconButtonSmall4.Name = "iconButtonSmall4";
-            this.iconButtonSmall4.Size = new System.Drawing.Size(47, 44);
-            this.iconButtonSmall4.TabIndex = 11;
-            this.iconButtonSmall4.Text = "@";
-            this.iconButtonSmall4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButtonSmall1
-            // 
-            this.iconButtonSmall1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonSmall1.AutoSize = true;
-            this.iconButtonSmall1.Font = new System.Drawing.Font("UI", 20F);
-            this.iconButtonSmall1.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonSmall1.Location = new System.Drawing.Point(143, 3);
-            this.iconButtonSmall1.Name = "iconButtonSmall1";
-            this.iconButtonSmall1.Size = new System.Drawing.Size(39, 27);
-            this.iconButtonSmall1.TabIndex = 11;
-            this.iconButtonSmall1.Text = "";
-            this.iconButtonSmall1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButtonSmall3
-            // 
-            this.iconButtonSmall3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonSmall3.AutoSize = true;
-            this.iconButtonSmall3.Font = new System.Drawing.Font("UI", 20F);
-            this.iconButtonSmall3.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonSmall3.Location = new System.Drawing.Point(143, 3);
-            this.iconButtonSmall3.Name = "iconButtonSmall3";
-            this.iconButtonSmall3.Size = new System.Drawing.Size(39, 27);
-            this.iconButtonSmall3.TabIndex = 11;
-            this.iconButtonSmall3.Text = "";
-            this.iconButtonSmall3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.AutoSize = true;
-            this.iconButton1.Font = new System.Drawing.Font("UI", 30F);
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(58, 41);
-            this.iconButton1.TabIndex = 8;
-            this.iconButton1.Text = "";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MemberInfoControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
@@ -288,7 +289,7 @@
 
         #endregion
         public System.Windows.Forms.PictureBox photo;
-        private Borderless.Buttons.IconButton iconButton1;
+        private Borderless.Buttons.IconButton editButton;
         private System.Windows.Forms.Label outputPhone;
         private System.Windows.Forms.Label outputGroup;
         private IconButtonSmall iconButtonSmall1;

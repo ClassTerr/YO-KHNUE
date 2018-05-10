@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Borderless.BorderlessForm;
 using static MO_KHNUE.Theme;
+using MO_KHNUE;
 
 namespace Borderless.Buttons
 {
@@ -30,7 +31,7 @@ namespace Borderless.Buttons
         {
             var textColor = FindForm()?.ContainsFocus != true ? InactiveTextColor : ActiveTextColor;
             Color dark = ControlPaint.Dark(textColor, 30);
-            var backColor = NormalBackColor;
+            var backColor = Theme.DefaultBackgorundColor;
 
             switch (state)
             {

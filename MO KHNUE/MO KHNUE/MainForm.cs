@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MO_KHNUE.Database;
 using MO_KHNUE.Properties;
+using static MO_KHNUE.Database.DBContext;
 
 namespace MO_KHNUE
 {
@@ -22,7 +24,10 @@ namespace MO_KHNUE
             InitializeComponent();
             instance = this;
             this.BackButton.Click += (s, a) => BackButtonClick();
+            UpdateDbContext().SaveChanges();
+            iconButton1.AutoSize = iconButton2.AutoSize = iconButton3.AutoSize = iconButton4.AutoSize = false;
         }
+
 
         public void ShowContent(Control contentControl)
         {
@@ -53,19 +58,24 @@ namespace MO_KHNUE
 
         private void MenuItem_MouseEnter(object sender, EventArgs e)
         {
-            (sender as Control).BackColor = Color.FromArgb(3, 131, 135);
+            (sender as Control).BackColor = Theme.HoverBackColor;
+            (sender as Control).ForeColor = Theme.HoveredDefaultElementBackgorundColor;
         }
 
         private void MenuItem_MouseLeave(object sender, EventArgs e)
         {
             (sender as Control).BackColor = Color.Transparent;
+            (sender as Control).ForeColor = Theme.DefaultElementForeColor;
         }
 
-        private void MenuItem_Click(object sender, EventArgs e)
+        private void iconButton1_MouseUp(object sender, MouseEventArgs e)
         {
+            MenuItem_MouseEnter(sender, e);
+        }
 
+        private void ShowOverview(object sender, EventArgs e)
+        {
             ClearWindows();
-
             ShowContent(new OverviewForm());
         }
 
@@ -98,7 +108,7 @@ namespace MO_KHNUE
 
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void ShowMembers(object sender, EventArgs e)
         {
 
             ShowContent(new MembersControl());

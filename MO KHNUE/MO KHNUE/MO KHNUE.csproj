@@ -45,6 +45,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,13 +62,17 @@
     <Compile Include="BorderlessForm.Designer.cs">
       <DependentUpon>BorderlessForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Context.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="Database\Context.cs" />
+    <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\DBSeed.cs" />
     <Compile Include="DepartmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DepartmentForm.Designer.cs">
       <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\SolidComponent.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
@@ -94,7 +99,7 @@
       <DependentUpon>MemberInfoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MemberEditControl.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MemberEditControl.Designer.cs">
       <DependentUpon>MemberEditControl.cs</DependentUpon>
@@ -119,10 +124,7 @@
     </Compile>
     <Compile Include="Native.cs" />
     <Compile Include="PhotoComponent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PhotoComponent.Designer.cs">
-      <DependentUpon>PhotoComponent.cs</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Random.cs" />
     <Compile Include="Entities\TaskDescription.cs" />
@@ -177,9 +179,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PhotoComponent.resx">
-      <DependentUpon>PhotoComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

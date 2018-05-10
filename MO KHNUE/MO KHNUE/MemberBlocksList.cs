@@ -7,6 +7,9 @@ namespace MO_KHNUE
 {
     public partial class MemberBlocksList : UserControl
     {
+        public delegate void MemberChangedHandler(Member currentMember);
+        public new event MemberChangedHandler MemberChanged;
+
         public MemberBlocksList()
         {
             InitializeComponent();
@@ -26,9 +29,7 @@ namespace MO_KHNUE
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             table.Dock = DockStyle.Fill;
-            table.RowCount = 1;
-            table.Size = new System.Drawing.Size(838, 327);
-            table.TabIndex = 1;
+            BackColor = Theme.DefaultBackgorundColor;
             table.ControlAdded += new ControlEventHandler(tableLayoutPanel1_ControlAdded);
             Controls.Add(table);
         }
@@ -41,15 +42,26 @@ namespace MO_KHNUE
 
         public void AddMembers(List<Member> members)
         {
-            foreach (var item in members)
+            MemberBlock[] blocks = new MemberBlock[members.Count];
+            for (int i = 0; i < members.Count; i++)
             {
-                var block = new MemberBlock(item)
+                var block = new MemberBlock(members[i])
                 {
-                    //Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top
+                    Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top,
+                    MaximumSize = new System.Drawing.Size(0, 50)
                 };
-                table.Controls.Add(block);
+
+                block.CustomMouseClick += (s, e) =>
+                {
+                    MemberChanged?.Invoke(block.CurrentMember);
+                    ;
+                };
+
+                blocks[i] = block;
             }
+            table.Controls.AddRange(blocks);
         }
+
         public void AddMember(Member member)
         {
             var block = new MemberBlock(member)
@@ -82,7 +94,8 @@ namespace MO_KHNUE
         public int MinItemSize
         {
             get { return minItemSize; }
-            set {
+            set
+            {
                 Form_Resize(null, null);
                 minItemSize = Math.Max(1, value);
             }
@@ -98,7 +111,7 @@ namespace MO_KHNUE
 
         private void Form_Resize(object sender, EventArgs e)
         {
-            table.ColumnCount = Math.Max(1,Math.Min(table.Controls.Count,  table.Width / MinItemSize));
+            table.ColumnCount = Math.Max(1, Math.Min(table.Controls.Count, table.Width / MinItemSize));
         }
 
         private void tableLayoutPanel1_ControlAdded(object sender, ControlEventArgs e)

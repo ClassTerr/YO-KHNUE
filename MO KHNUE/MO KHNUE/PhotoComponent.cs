@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MO_KHNUE.Utils;
 using MO_KHNUE.Properties;
+using System.Drawing.Drawing2D;
 
 namespace MO_KHNUE
 {
-    public partial class PhotoComponent : UserControl
+    public partial class PhotoComponent : PictureBox
     {
         public PhotoComponent()
         {
             bool sizeChanging = false;
-            InitializeComponent();
+            this.SizeMode = PictureBoxSizeMode.Zoom;
             SizeChanged += (o, e) =>
             {
                 if (sizeChanging)
@@ -29,20 +30,15 @@ namespace MO_KHNUE
             };
         }
 
-        public void SetImageRaw(Image value)
-        {
-            pictureBox1.Image = value;
-        }
-
         public void SetImage(Image value, PointF center, float radius)
         {
             if (value != null)
             {
-                pictureBox1.Image = ClipToCircle(value, center, radius, Color.Transparent);
+                Image = ClipToCircle(value, center, radius, Color.Transparent);
             }
             else
             {
-                pictureBox1.Image = Resources.UserImagePlaceholder;
+                Image = Resources.UserImagePlaceholder;
             }
         }
 
@@ -50,17 +46,12 @@ namespace MO_KHNUE
         {
             if (value != null)
             {
-                pictureBox1.Image = ClipToCircle(value);
+                Image = ClipToCircle(value);
             }
             else
             {
-                pictureBox1.Image = Resources.UserImagePlaceholder;
+                Image = Resources.UserImagePlaceholder;
             }
-        }
-
-        public Image GetImage()
-        {
-            return pictureBox1.Image;
         }
     }
 }

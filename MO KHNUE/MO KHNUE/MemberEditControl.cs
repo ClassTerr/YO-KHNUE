@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace MO_KHNUE.Entities
 {
-    public partial class MemberControl : UserControl
+    public partial class MemberControl : Form
     {
         private Member _member = null;
         public MemberControl()

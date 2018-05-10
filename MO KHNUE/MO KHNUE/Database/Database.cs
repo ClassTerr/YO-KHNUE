@@ -3,9 +3,9 @@ using StackExchange.Redis;
 using System;
 using System.Configuration;
 
-namespace MO_KHNUE
+namespace MO_KHNUE.Database
 {
-    public static class Database
+    public static class RedisDatabase
     {
         private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
         {

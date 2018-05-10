@@ -35,7 +35,7 @@ namespace Borderless
 
             var textColor = ActiveTextColor;
             Color dark = ControlPaint.Dark(textColor, 30);
-            var backColor = NormalBackColor;
+            var backColor = DefaultBackgorundColor;
 
             switch (state)
             {
