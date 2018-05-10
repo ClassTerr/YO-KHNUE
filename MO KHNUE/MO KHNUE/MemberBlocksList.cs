@@ -8,7 +8,7 @@ namespace MO_KHNUE
     public partial class MemberBlocksList : UserControl
     {
         public delegate void MemberChangedHandler(Member currentMember);
-        public new event MemberChangedHandler MemberChanged;
+        public event MemberChangedHandler MemberChanged;
 
         public MemberBlocksList()
         {
@@ -34,6 +34,33 @@ namespace MO_KHNUE
             Controls.Add(table);
         }
 
+        public MemberBlock GetSelectedBlock()
+        {
+
+            foreach (var item in table.Controls)
+            {
+                if (item is MemberBlock mblk)
+                {
+                    if (mblk.Selected)
+                        return mblk;
+                }
+            }
+            return null;
+        }
+
+        public void RemoveMember(Member member)
+        {
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                if ((Controls[i] as MemberBlock)?.CurrentMember == member)
+                {
+                    Controls.RemoveAt(i);
+                    return;
+                }
+
+            }
+        }
+
         public void SetMembers(List<Member> members)
         {
             table.Controls.Clear();
@@ -54,7 +81,14 @@ namespace MO_KHNUE
                 block.CustomMouseClick += (s, e) =>
                 {
                     MemberChanged?.Invoke(block.CurrentMember);
-                    ;
+                    foreach (var item in table.Controls)
+                    {
+                        if (item is MemberBlock mblk)
+                        {
+                            mblk.Selected = false;
+                        }
+                    }
+                    block.Selected = true;
                 };
 
                 blocks[i] = block;
@@ -69,24 +103,20 @@ namespace MO_KHNUE
                 Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top,
                 MaximumSize = new System.Drawing.Size(0, 50)
             };
-            table.Controls.Add(block);
-        }
 
-        public MemberBlock RemoveMember(Member member)
-        {
-            for (int i = 0; i < table.Controls.Count; i++)
+            block.CustomMouseClick += (s, e) =>
             {
-                var item = table.Controls[i];
-                if (item is MemberBlock block)
+                MemberChanged?.Invoke(block.CurrentMember);
+                foreach (var item in table.Controls)
                 {
-                    if (block.CurrentMember == member)
+                    if (item is MemberBlock mblk)
                     {
-                        table.Controls.RemoveAt(i);
-                        return block;
+                        mblk.Selected = false;
                     }
                 }
-            }
-            return null;
+                block.Selected = true;
+            };
+            table.Controls.Add(block);
         }
 
         private int minItemSize = 300;

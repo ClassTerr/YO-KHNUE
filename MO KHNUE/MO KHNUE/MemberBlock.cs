@@ -19,6 +19,30 @@ namespace MO_KHNUE
         public Member CurrentMember { get; set; }
         public new event EventHandler CustomMouseClick;
 
+        private bool selected;
+        public bool Selected {
+            get
+            {
+                return selected;
+            }
+            set
+            {
+                selected = value;
+                if (selected)
+                {
+                    BorderStyle = BorderStyle.FixedSingle;
+                    ForeColor = DownTextColor;
+                    BackColor = AccentElementBackgorundColor;
+                }
+                else
+                {
+                    BorderStyle = BorderStyle.None;
+                    ForeColor = DefaultElementForeColor;
+                    BackColor = DefaultElementBackgorundColor;
+                }
+            }
+        }
+
         public MemberBlock()
         {
             CustomMouseEnter += Control_MouseEnter;
@@ -56,19 +80,35 @@ namespace MO_KHNUE
 
         private void Control_MouseEnter(object sender, EventArgs e)
         {
-            ForeColor = HoveredDefaultElementForeColor;
-            BackColor = HoveredDefaultElementBackgorundColor;
+            if (!selected)
+            {
+                ForeColor = HoveredDefaultElementForeColor;
+                BackColor = HoveredDefaultElementBackgorundColor;
+            }
         }
 
         private void Control_MouseLeave(object sender, EventArgs e)
         {
-            ForeColor = DefaultElementForeColor;
-            BackColor = DefaultElementBackgorundColor;
+            if (!selected)
+            {
+                ForeColor = DefaultElementForeColor;
+                BackColor = DefaultElementBackgorundColor;
+            }
+            else
+            {
+                ForeColor = DownTextColor;
+                BackColor = AccentElementBackgorundColor;
+            }
         }
 
         private void Control_MouseClick(object sender, EventArgs e)
         {
             CustomMouseClick?.Invoke(sender, e);
+            if (selected)
+            {
+                ForeColor = DownTextColor;
+                BackColor = AccentElementBackgorundColor;
+            }
         }
     }
 }

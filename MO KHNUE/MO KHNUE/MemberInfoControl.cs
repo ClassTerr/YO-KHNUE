@@ -33,6 +33,8 @@ namespace MO_KHNUE.Entities
         {
             outputBirthDay.Text = outputEmail.Text = outputGroup.Text = outputName.Text = outputPhone.Text = "";
             photo.Image = Resources.UserImagePlaceholder;
+            editButton.Visible = iconButtonSmall1.Visible = iconButtonSmall2.Visible =
+                iconButtonSmall3.Visible = iconButtonSmall4.Visible = this.Visible = false;
         }
 
         public void InitMember(Member member)
@@ -43,6 +45,9 @@ namespace MO_KHNUE.Entities
                 ClearInfo();
                 return;
             }
+
+            editButton.Visible = iconButtonSmall1.Visible = iconButtonSmall2.Visible =
+                iconButtonSmall3.Visible = iconButtonSmall4.Visible = this.Visible = true;
 
             outputBirthDay.Text = member.BirthDay.ToShortDateString();
             outputEmail.Text = member.Email;

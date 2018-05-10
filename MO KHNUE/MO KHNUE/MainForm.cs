@@ -26,6 +26,7 @@ namespace MO_KHNUE
             this.BackButton.Click += (s, a) => BackButtonClick();
             UpdateDbContext().SaveChanges();
             iconButton1.AutoSize = iconButton2.AutoSize = iconButton3.AutoSize = iconButton4.AutoSize = false;
+            iconButton1.Size = iconButton2.Size = iconButton3.Size = iconButton4.Size = new Size(80, 60);
         }
 
 

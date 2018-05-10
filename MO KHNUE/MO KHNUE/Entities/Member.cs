@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace MO_KHNUE.Entities
 {
     [Table("Members")]
-    public class Member
+    public class Member : IEquatable<Member>
     {
         public Member()
         {
@@ -28,9 +28,24 @@ namespace MO_KHNUE.Entities
         public DateTime BirthDay;
         public Image Photo;
 
+        public string FullName
+        {
+            get { return Name + " " + Surname; }
+        }
+
+
         public override string ToString()
         {
             return $"{{ {Name} {Surname} {Phone} {Group} {Course} {Email} {BirthDay.ToShortDateString()} }}";
+        } 
+
+        public bool Equals(Member other)
+        {
+            if (other is Member mem)
+            {
+                return mem.ID == ID;
+            }
+            else return false;
         }
     }
 }

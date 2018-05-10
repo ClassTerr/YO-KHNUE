@@ -148,6 +148,7 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.AutoSize = true;
             this.menuPanel.BackColor = System.Drawing.Color.White;
             this.menuPanel.Controls.Add(this.iconButton2);
             this.menuPanel.Controls.Add(this.iconButton3);
@@ -179,6 +180,7 @@
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
         #endregion
