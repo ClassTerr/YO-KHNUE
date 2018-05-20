@@ -56,21 +56,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Block.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="BorderlessForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BorderlessForm.Designer.cs">
       <DependentUpon>BorderlessForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\IBlock.cs" />
+    <Compile Include="Controllers\ISearchable.cs" />
     <Compile Include="Database\Context.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\DBSeed.cs" />
-    <Compile Include="DepartmentForm.cs">
+    <Compile Include="DepartmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentControl.Designer.cs">
+      <DependentUpon>DepartmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartmentForm.Designer.cs">
-      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    <Compile Include="DepartmentsForm.Designer.cs">
+      <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\ICloseQuery.cs" />
     <Compile Include="Design\SolidComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +104,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DepartmentBlock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentBlock.Designer.cs">
+      <DependentUpon>DepartmentBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventHandlers.cs" />
     <Compile Include="MemberInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,16 +124,16 @@
       <DependentUpon>MemberEditControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MembersControl.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MembersControl.Designer.cs">
       <DependentUpon>MembersControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberBlocksList.cs">
+    <Compile Include="BlocksList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MemberBlocksList.Designer.cs">
-      <DependentUpon>MemberBlocksList.cs</DependentUpon>
+    <Compile Include="BlocksList.Designer.cs">
+      <DependentUpon>BlocksList.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuBar.cs">
       <SubType>UserControl</SubType>
@@ -142,6 +161,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Member.cs" />
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Theme.cs" />
     <Compile Include="UIFont.cs" />
     <Compile Include="MemberBlock.cs">
@@ -150,16 +175,28 @@
     <Compile Include="MemberBlock.Designer.cs">
       <DependentUpon>MemberBlock.cs</DependentUpon>
     </Compile>
+    <Compile Include="MemberBlockList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemberBlockList.Designer.cs">
+      <DependentUpon>MemberBlockList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="BorderlessForm.resx">
       <DependentUpon>BorderlessForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentForm.resx">
-      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    <EmbeddedResource Include="DepartmentControl.resx">
+      <DependentUpon>DepartmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentsForm.resx">
+      <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentBlock.resx">
+      <DependentUpon>DepartmentBlock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberInfoControl.resx">
       <DependentUpon>MemberInfoControl.cs</DependentUpon>
@@ -171,8 +208,8 @@
     <EmbeddedResource Include="MembersControl.resx">
       <DependentUpon>MembersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberBlocksList.resx">
-      <DependentUpon>MemberBlocksList.cs</DependentUpon>
+    <EmbeddedResource Include="BlocksList.resx">
+      <DependentUpon>BlocksList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverviewForm.resx">
       <DependentUpon>OverviewForm.cs</DependentUpon>
@@ -192,6 +229,12 @@
     </Compile>
     <EmbeddedResource Include="MemberBlock.resx">
       <DependentUpon>MemberBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberBlockList.resx">
+      <DependentUpon>MemberBlockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

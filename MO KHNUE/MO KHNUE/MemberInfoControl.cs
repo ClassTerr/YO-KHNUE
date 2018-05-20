@@ -21,6 +21,8 @@ namespace MO_KHNUE.Entities
             headPanel.BackColor = AccentElementBackgorundColor;
         }
 
+        public event MemberChangedHandler MemberChanged;
+
         public MemberInfoControl(Member member)
         {
             InitializeComponent();
@@ -31,10 +33,11 @@ namespace MO_KHNUE.Entities
 
         public void ClearInfo()
         {
-            outputBirthDay.Text = outputEmail.Text = outputGroup.Text = outputName.Text = outputPhone.Text = "";
+            outputBirthDay.Text = outputEmail.Text = outputGroup.Text = outputName.Text
+                = outputPhone.Text = outputCource.Text = "";
             photo.Image = Resources.UserImagePlaceholder;
             editButton.Visible = iconButtonSmall1.Visible = iconButtonSmall2.Visible =
-                iconButtonSmall3.Visible = iconButtonSmall4.Visible = this.Visible = false;
+                iconButtonSmall3.Visible = iconButtonSmall4.Visible = iconButtonSmall6.Visible = iconButtonSmall5.Visible = false;
         }
 
         public void InitMember(Member member)
@@ -47,13 +50,14 @@ namespace MO_KHNUE.Entities
             }
 
             editButton.Visible = iconButtonSmall1.Visible = iconButtonSmall2.Visible =
-                iconButtonSmall3.Visible = iconButtonSmall4.Visible = this.Visible = true;
+                iconButtonSmall3.Visible = iconButtonSmall4.Visible = iconButtonSmall6.Visible = iconButtonSmall5.Visible = true;
 
             outputBirthDay.Text = member.BirthDay.ToShortDateString();
             outputEmail.Text = member.Email;
             outputGroup.Text = member.Group;
-            outputName.Text = member.Name + " " + member.Surname;
+            outputName.Text = member.FullName;
             outputPhone.Text = member.Phone;
+            outputCource.Text = member.Course.ToString() + " курс";
 
             /*if (member.Photo == null)
                 photo.Image = Utils.ClipToCircle(Resources.UserImagePlaceholder);
@@ -61,9 +65,23 @@ namespace MO_KHNUE.Entities
             photo.Image = Resources.UserImagePlaceholder;
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
-            MainForm.instance.ShowContent(new MemberControl(_member));
+            var control = new MemberEditControl(_member);
+            control.MemberChanged += (member) =>
+            {
+                try
+                {
+                    Database.DBContext.CurrentContext.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Невозможно сохранить изменения!");
+                }
+                InitMember(member);
+                MemberChanged?.Invoke(member);
+            };
+            MainForm.instance.ShowContent(control);
         }
     }
 }

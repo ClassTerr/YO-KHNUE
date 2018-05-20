@@ -1,4 +1,6 @@
-﻿namespace MO_KHNUE
+﻿using MO_KHNUE.Entities;
+
+namespace MO_KHNUE
 {
     partial class MembersControl
     {
@@ -29,74 +31,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolbox = new System.Windows.Forms.FlowLayoutPanel();
-            this.memberBlocksList1 = new MO_KHNUE.MemberBlocksList();
-            this.iconButton1 = new Borderless.Buttons.IconButton();
-            this.iconButton2 = new Borderless.Buttons.IconButton();
             this.memberInfoControl1 = new MO_KHNUE.Entities.MemberInfoControl();
+            this.memberBlocksList1 = new MO_KHNUE.MemberBlockList();
             this.panel1.SuspendLayout();
-            this.toolbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.memberBlocksList1);
-            this.panel1.Controls.Add(this.toolbox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 731);
+            this.panel1.Size = new System.Drawing.Size(836, 720);
             this.panel1.TabIndex = 1;
-            // 
-            // toolbox
-            // 
-            this.toolbox.AutoSize = true;
-            this.toolbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toolbox.Controls.Add(this.iconButton1);
-            this.toolbox.Controls.Add(this.iconButton2);
-            this.toolbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toolbox.Location = new System.Drawing.Point(0, 0);
-            this.toolbox.Name = "toolbox";
-            this.toolbox.Size = new System.Drawing.Size(846, 69);
-            this.toolbox.TabIndex = 3;
-            // 
-            // memberBlocksList1
-            // 
-            this.memberBlocksList1.BackColor = System.Drawing.Color.White;
-            this.memberBlocksList1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.memberBlocksList1.Location = new System.Drawing.Point(0, 69);
-            this.memberBlocksList1.Margin = new System.Windows.Forms.Padding(5);
-            this.memberBlocksList1.MinItemSize = 300;
-            this.memberBlocksList1.Name = "memberBlocksList1";
-            this.memberBlocksList1.Size = new System.Drawing.Size(846, 662);
-            this.memberBlocksList1.TabIndex = 2;
-            this.memberBlocksList1.MemberChanged += new MO_KHNUE.MemberBlocksList.MemberChangedHandler(this.memberBlocksList1_MemberChanged);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.AutoSize = true;
-            this.iconButton1.Font = new System.Drawing.Font("UI", 40F);
-            this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.Location = new System.Drawing.Point(3, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(86, 67);
-            this.iconButton1.TabIndex = 0;
-            this.iconButton1.Text = "";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.AutoSize = true;
-            this.iconButton2.Font = new System.Drawing.Font("UI", 40F);
-            this.iconButton2.ForeColor = System.Drawing.Color.Black;
-            this.iconButton2.Location = new System.Drawing.Point(95, 0);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(83, 67);
-            this.iconButton2.TabIndex = 1;
-            this.iconButton2.Text = "";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // memberInfoControl1
             // 
@@ -105,25 +52,40 @@
             this.memberInfoControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.memberInfoControl1.Dock = System.Windows.Forms.DockStyle.Right;
             this.memberInfoControl1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberInfoControl1.Location = new System.Drawing.Point(846, 0);
+            this.memberInfoControl1.Location = new System.Drawing.Point(836, 0);
             this.memberInfoControl1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.memberInfoControl1.Name = "memberInfoControl1";
-            this.memberInfoControl1.Size = new System.Drawing.Size(481, 731);
+            this.memberInfoControl1.Size = new System.Drawing.Size(486, 720);
             this.memberInfoControl1.TabIndex = 0;
+            // 
+            // memberBlocksList1
+            // 
+            this.memberBlocksList1.BackColor = System.Drawing.Color.White;
+            this.memberBlocksList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memberBlocksList1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.memberBlocksList1.Location = new System.Drawing.Point(0, 0);
+            this.memberBlocksList1.Margin = new System.Windows.Forms.Padding(5);
+            this.memberBlocksList1.MinItemSize = 400;
+            this.memberBlocksList1.Name = "memberBlocksList1";
+            this.memberBlocksList1.OnTypeSearch = true;
+            this.memberBlocksList1.Selectable = true;
+            this.memberBlocksList1.Size = new System.Drawing.Size(836, 720);
+            this.memberBlocksList1.TabIndex = 2;
+            this.memberBlocksList1.WithControlPanel = true;
+            this.memberBlocksList1.BlockClicked += new MO_KHNUE.BlockValueChangedHandler<MO_KHNUE.Entities.Member>(this.memberBlocksList1_MemberChanged);
+            this.memberBlocksList1.ItemRemoveButtonClick += new MO_KHNUE.BlockValueChangedHandler<MO_KHNUE.Entities.Member>(this.RemoveMember);
+            this.memberBlocksList1.ItemAddButtonClick += new MO_KHNUE.BlockValueChangedHandler<Member>(this.AddMember);
             // 
             // MembersControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.memberInfoControl1);
+            this.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MembersControl";
-            this.Size = new System.Drawing.Size(1327, 731);
+            this.Size = new System.Drawing.Size(1322, 720);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.toolbox.ResumeLayout(false);
-            this.toolbox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -132,9 +94,6 @@
 
         private Entities.MemberInfoControl memberInfoControl1;
         private System.Windows.Forms.Panel panel1;
-        private MemberBlocksList memberBlocksList1;
-        private System.Windows.Forms.FlowLayoutPanel toolbox;
-        private Borderless.Buttons.IconButton iconButton1;
-        private Borderless.Buttons.IconButton iconButton2;
+        private MemberBlockList memberBlocksList1;
     }
 }

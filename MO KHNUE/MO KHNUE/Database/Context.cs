@@ -18,26 +18,38 @@ namespace MO_KHNUE.Database
             SetValue("Context", this);
         }
 
+        private static DBContext _context = null;
+
+        public static DBContext CurrentContext
+        {
+            get
+            {
+                if (_context == null)
+                    _context = UpdateDbContext();
+
+                return _context;
+            }
+        }
+
         private static DBContext LoadDBContext()
         {
-            DBContext context = null;
             string val = GetValue("Context");
 
             if (val != null)
             {
-                context = JsonConvert.DeserializeObject<DBContext>(val);
+                _context = JsonConvert.DeserializeObject<DBContext>(val);
             }
             else
             {
-                context = new DBContext(true);
+                _context = new DBContext(true);
             }
 
-            if (context == null)
+            if (_context == null)
             {
                 throw new JsonException("Cannot get context");
             }
 
-            return context;
+            return _context;
         }
 
         public static DBContext UpdateDbContext()

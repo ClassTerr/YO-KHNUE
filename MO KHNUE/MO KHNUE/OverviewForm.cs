@@ -27,15 +27,10 @@ namespace MO_KHNUE
                     Size = new Size(100, 30)
                 };
 
-                int count = item.Members.Count;
-                if (!item.Members.Contains(item.Head))
-                    count++;
-
-                b.Text = $"{item.Name} ({ count } чел.)";
 
                 b.Click += (e, s) =>
                 {
-                    MainForm.instance.ShowContent(new DepartmentForm(item));
+                    MainForm.instance.ShowContent(new DepartmentsForm(item));
                 };
 
                 flowLayoutPanel1.Controls.Add(b);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MO_KHNUE.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,11 +11,12 @@ using System.Threading.Tasks;
 namespace MO_KHNUE.Entities
 {
     [Table("Members")]
-    public class Member : IEquatable<Member>
+    public class Member : IEquatable<Member>, ISearchable
     {
         public Member()
         {
             ID = Rand.RandGuid();
+            BirthDay = DateTime.Now;
         }
 
         [Key]
@@ -37,7 +39,7 @@ namespace MO_KHNUE.Entities
         public override string ToString()
         {
             return $"{{ {Name} {Surname} {Phone} {Group} {Course} {Email} {BirthDay.ToShortDateString()} }}";
-        } 
+        }
 
         public bool Equals(Member other)
         {
@@ -46,6 +48,17 @@ namespace MO_KHNUE.Entities
                 return mem.ID == ID;
             }
             else return false;
+        }
+
+        public bool IsMatches(string pattern)
+        {
+            pattern = pattern.Trim().ToLower();
+
+            return Name.ToLower().Contains(pattern) ||
+                Surname.ToLower().Contains(pattern) ||
+                Group.ToLower().Contains(pattern) ||
+                Email.ToLower().Contains(pattern) ||
+                BirthDay.ToShortDateString().Contains(pattern);
         }
     }
 }

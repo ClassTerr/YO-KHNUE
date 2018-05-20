@@ -8,23 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MO_KHNUE.Entities;
+using MO_KHNUE.Database;
 
 namespace MO_KHNUE
 {
-    public partial class MembersControl : UserControl
+    public partial class MembersControl : Form
     {
         public MembersControl()
         {
             InitializeComponent();
 
-            toolbox.BackColor = Theme.HoveredDefaultElementBackgorundColor;
-
-            InitControl(Database.DBContext.UpdateDbContext().Members);
+            InitControl(DBContext.UpdateDbContext().Members);
+            memberInfoControl1.MemberChanged += (member) =>
+            {
+                InitControl(DBContext.CurrentContext.Members);
+            };
         }
 
         public void InitControl(List<Member> members)
         {
-            memberBlocksList1.SetMembers(members);
+            memberBlocksList1.SetValues(members);
             memberInfoControl1.InitMember(null);
         }
 
@@ -33,26 +36,34 @@ namespace MO_KHNUE
             memberInfoControl1.InitMember(currentMember);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void AddMember(Member curentMember)
         {
-
+            var newMember = new Member();
+            MemberEditControl editControl = new MemberEditControl(newMember);
+            editControl.MemberChanged += (mem) =>
+            {
+                var context = DBContext.CurrentContext;
+                context.Members.Add(newMember);
+                context.SaveChanges();
+                InitControl(context.Members);
+            };
+            MainForm.instance.ShowContent(editControl);
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void RemoveMember(Member member)
         {
-            var sel = memberBlocksList1.GetSelectedBlock();
-            if (sel == null)
+            if (member == null)
                 return;
 
             if (MessageBox.Show("Вы действительно хотите удалить из членов МО " + 
-                sel.CurrentMember.FullName + "?", 
+                member.FullName + "?", 
                 "Подтверждение", 
                 MessageBoxButtons.OKCancel, 
                 MessageBoxIcon.Exclamation) ==
                 DialogResult.OK)
             {
                 var db = Database.DBContext.UpdateDbContext();
-                int ind = db.Members.IndexOf(sel.CurrentMember);
+                int ind = db.Members.IndexOf(member);
                 if (ind == -1)
                 {
                     MessageBox.Show("Не удалось удалить...");
@@ -61,7 +72,7 @@ namespace MO_KHNUE
                 {
                     db.Members.RemoveAt(ind);
                     db.SaveChanges();
-                    InitControl(Database.DBContext.UpdateDbContext().Members);
+                    InitControl(DBContext.UpdateDbContext().Members);
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace MO_KHNUE
 {
-    partial class MemberBlocksList
+    partial class MemberBlockList
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -28,16 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.controlPanel.SuspendLayout();
+            this.searchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // MemberBlocksList
+            // controlPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MemberBlocksList";
-            this.Size = new System.Drawing.Size(1117, 402);
-            this.Resize += new System.EventHandler(this.Form_Resize);
+            this.controlPanel.Size = new System.Drawing.Size(883, 57);
+            // 
+            // searchPanel
+            // 
+            this.searchPanel.Location = new System.Drawing.Point(539, 0);
+            // 
+            // MemberBlockList
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Name = "MemberBlockList";
+            this.Size = new System.Drawing.Size(883, 460);
+            this.WithControlPanel = true;
+            this.controlPanel.ResumeLayout(false);
+            this.controlPanel.PerformLayout();
+            this.searchPanel.ResumeLayout(false);
+            this.searchPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

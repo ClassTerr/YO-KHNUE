@@ -30,10 +30,11 @@
         {
             this.photo = new System.Windows.Forms.PictureBox();
             this.outputPhone = new System.Windows.Forms.Label();
-            this.outputGroup = new System.Windows.Forms.Label();
             this.headPanel = new System.Windows.Forms.Panel();
             this.editButton = new Borderless.Buttons.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButtonSmall5 = new MO_KHNUE.IconButtonSmall();
             this.iconButtonSmall2 = new MO_KHNUE.IconButtonSmall();
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconButtonSmall1 = new MO_KHNUE.IconButtonSmall();
@@ -44,14 +45,20 @@
             this.iconButtonSmall3 = new MO_KHNUE.IconButtonSmall();
             this.outputBirthDay = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.iconButtonSmall6 = new MO_KHNUE.IconButtonSmall();
+            this.outputCource = new System.Windows.Forms.Label();
             this.outputName = new System.Windows.Forms.Label();
+            this.outputGroup = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.headPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // photo
@@ -80,19 +87,6 @@
             this.outputPhone.Text = "+38 (012) 345 67 89";
             this.outputPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // outputGroup
-            // 
-            this.outputGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.outputGroup.AutoSize = true;
-            this.outputGroup.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outputGroup.Location = new System.Drawing.Point(178, 3);
-            this.outputGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.outputGroup.Name = "outputGroup";
-            this.outputGroup.Size = new System.Drawing.Size(152, 32);
-            this.outputGroup.TabIndex = 10;
-            this.outputGroup.Text = "6.04.51.15.01";
-            this.outputGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // headPanel
             // 
             this.headPanel.Controls.Add(this.editButton);
@@ -114,17 +108,40 @@
             this.editButton.TabIndex = 8;
             this.editButton.Text = "";
             this.editButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.editButton.Click += new System.EventHandler(this.iconButton1_Click);
+            this.editButton.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.iconButtonSmall2);
-            this.panel2.Controls.Add(this.outputGroup);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 120);
+            this.panel2.Location = new System.Drawing.Point(0, 160);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(496, 40);
             this.panel2.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.outputGroup);
+            this.panel1.Controls.Add(this.iconButtonSmall5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(496, 40);
+            this.panel1.TabIndex = 12;
+            // 
+            // iconButtonSmall5
+            // 
+            this.iconButtonSmall5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSmall5.AutoSize = true;
+            this.iconButtonSmall5.Font = new System.Drawing.Font("UI", 20F);
+            this.iconButtonSmall5.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall5.Location = new System.Drawing.Point(120, 3);
+            this.iconButtonSmall5.Name = "iconButtonSmall5";
+            this.iconButtonSmall5.Size = new System.Drawing.Size(45, 34);
+            this.iconButtonSmall5.TabIndex = 11;
+            this.iconButtonSmall5.Text = "";
+            this.iconButtonSmall5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // iconButtonSmall2
             // 
@@ -144,7 +161,7 @@
             this.panel4.Controls.Add(this.outputPhone);
             this.panel4.Controls.Add(this.iconButtonSmall1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 40);
+            this.panel4.Location = new System.Drawing.Point(0, 80);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(496, 40);
             this.panel4.TabIndex = 2;
@@ -167,7 +184,7 @@
             this.panel5.Controls.Add(this.outputEmail);
             this.panel5.Controls.Add(this.iconButtonSmall4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 80);
+            this.panel5.Location = new System.Drawing.Point(0, 120);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(496, 40);
             this.panel5.TabIndex = 17;
@@ -240,12 +257,49 @@
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.panel4);
+            this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 360);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(496, 242);
             this.panel6.TabIndex = 18;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.iconButtonSmall6);
+            this.panel7.Controls.Add(this.outputCource);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 40);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(496, 40);
+            this.panel7.TabIndex = 18;
+            // 
+            // iconButtonSmall6
+            // 
+            this.iconButtonSmall6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSmall6.AutoSize = true;
+            this.iconButtonSmall6.Font = new System.Drawing.Font("UI", 20F);
+            this.iconButtonSmall6.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall6.Location = new System.Drawing.Point(120, 3);
+            this.iconButtonSmall6.Name = "iconButtonSmall6";
+            this.iconButtonSmall6.Size = new System.Drawing.Size(48, 34);
+            this.iconButtonSmall6.TabIndex = 11;
+            this.iconButtonSmall6.Text = "";
+            this.iconButtonSmall6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // outputCource
+            // 
+            this.outputCource.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.outputCource.AutoSize = true;
+            this.outputCource.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.outputCource.Location = new System.Drawing.Point(178, 1);
+            this.outputCource.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.outputCource.Name = "outputCource";
+            this.outputCource.Size = new System.Drawing.Size(28, 32);
+            this.outputCource.TabIndex = 13;
+            this.outputCource.Text = "1";
+            this.outputCource.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // outputName
             // 
@@ -257,6 +311,19 @@
             this.outputName.TabIndex = 20;
             this.outputName.Text = "Name Surname";
             this.outputName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // outputGroup
+            // 
+            this.outputGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.outputGroup.AutoSize = true;
+            this.outputGroup.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.outputGroup.Location = new System.Drawing.Point(172, 4);
+            this.outputGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.outputGroup.Name = "outputGroup";
+            this.outputGroup.Size = new System.Drawing.Size(152, 32);
+            this.outputGroup.TabIndex = 12;
+            this.outputGroup.Text = "6.04.51.15.01";
+            this.outputGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MemberInfoControl
             // 
@@ -276,6 +343,8 @@
             this.headPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -283,6 +352,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -291,7 +362,6 @@
         public System.Windows.Forms.PictureBox photo;
         private Borderless.Buttons.IconButton editButton;
         private System.Windows.Forms.Label outputPhone;
-        private System.Windows.Forms.Label outputGroup;
         private IconButtonSmall iconButtonSmall1;
         private System.Windows.Forms.Panel headPanel;
         private IconButtonSmall iconButtonSmall2;
@@ -305,5 +375,11 @@
         private System.Windows.Forms.Label outputBirthDay;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label outputName;
+        private System.Windows.Forms.Panel panel1;
+        private IconButtonSmall iconButtonSmall5;
+        private System.Windows.Forms.Panel panel7;
+        private IconButtonSmall iconButtonSmall6;
+        private System.Windows.Forms.Label outputCource;
+        private System.Windows.Forms.Label outputGroup;
     }
 }

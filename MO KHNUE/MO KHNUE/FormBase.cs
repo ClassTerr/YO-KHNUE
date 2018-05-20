@@ -159,8 +159,8 @@ namespace Borderless
                 var x = NativeMethods.GetSystemMetrics(NativeConstants.SM_CXSIZEFRAME);
                 var y = NativeMethods.GetSystemMetrics(NativeConstants.SM_CYSIZEFRAME);
                 var p = NativeMethods.GetSystemMetrics(NativeConstants.SM_CXPADDEDBORDER);
-                var w = x + p;
-                var h = y + p;
+                var w = x;
+                var h = y;
 
                 r.left += w;
                 r.top += h;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MO_KHNUE.Database;
+using MO_KHNUE.Design;
 using MO_KHNUE.Properties;
 using static MO_KHNUE.Database.DBContext;
 
@@ -16,7 +17,6 @@ namespace MO_KHNUE
     public partial class MainForm : Borderless.BorderlessForm
     {
         public static MainForm instance = null;
-        private Point startPoint = new Point(0, 0);
         public Stack<Control> contentStack = new Stack<Control>();
 
         public MainForm()
@@ -28,7 +28,16 @@ namespace MO_KHNUE
             iconButton1.AutoSize = iconButton2.AutoSize = iconButton3.AutoSize = iconButton4.AutoSize = false;
             iconButton1.Size = iconButton2.Size = iconButton3.Size = iconButton4.Size = new Size(80, 60);
         }
-
+        
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams CP = base.CreateParams;
+                CP.ExStyle = CP.ExStyle | 0x02000000; // WS_EX_COMPOSITED
+                return CP;
+            }
+        }
 
         public void ShowContent(Control contentControl)
         {
@@ -47,6 +56,7 @@ namespace MO_KHNUE
 
         public void CloseContent(Control control)
         {
+            contentStack.Pop();
             controlPanel.Controls.Remove(control);
             if (control is Form frm)
             {
@@ -93,15 +103,21 @@ namespace MO_KHNUE
             if (contentStack.Count == 0)
                 return;
 
-            var form = contentStack.Pop();
-            CloseContent(form);
+            var form = contentStack.Peek();
+            if (form is ICloseQuery closeQuery)
+            {
+                closeQuery.TryClose();
+            }
+            else
+            {
+                CloseContent(form);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            //ClearWindows();
-
-            ShowContent(new DepartmentForm());
+            ClearWindows();
+            ShowContent(new DepartmentsForm());
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

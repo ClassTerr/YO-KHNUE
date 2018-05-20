@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace MO_KHNUE.Entities
         public string Name;
         public Member Head;
         public List<Member> Members;
+        public Image Image;
 
         public override string ToString()
         {

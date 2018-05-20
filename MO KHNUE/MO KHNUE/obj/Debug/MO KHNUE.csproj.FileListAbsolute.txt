@@ -32,12 +32,14 @@ D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\Newtonsoft.Json.xml
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\bin\Debug\StackExchange.Redis.xml
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csprojResolveAssemblyReference.cache
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\Borderless.BorderlessForm.resources
-D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.DepartmentForm.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.DepartmentControl.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.DepartmentsForm.resources
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MainForm.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.DepartmentBlock.resources
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberInfoControl.resources
-D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberControl.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Entities.MemberEditControl.resources
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MembersControl.resources
-D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MemberBlocksList.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.BlocksList.resources
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.OverviewForm.resources
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MenuBar.resources
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.Properties.Resources.resources
@@ -47,3 +49,5 @@ D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csproj.CoreCompileInputs
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.csproj.CopyComplete
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.exe
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO KHNUE.pdb
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.TestForm.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\Debug\MO_KHNUE.MemberBlockList.resources

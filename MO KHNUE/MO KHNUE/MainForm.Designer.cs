@@ -169,6 +169,7 @@
             this.Controls.Add(this.controlPanel);
             this.Controls.Add(this.menuPanel);
             this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";

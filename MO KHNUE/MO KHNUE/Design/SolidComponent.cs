@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MO_KHNUE.Theme;
 
 namespace MO_KHNUE.Design
 {
@@ -11,12 +12,15 @@ namespace MO_KHNUE.Design
     {
         public SolidComponent()
         {
+            ForeColor = ActiveTextColor;
+            BackColor = DefaultElementBackgorundColor;
+            AutoScaleMode = AutoScaleMode.None;
             SetEvents(this);
         }
 
         public event EventHandler CustomMouseEnter;
         public event EventHandler CustomMouseLeave;
-        public event EventHandler CustomMouseClick;
+        public event MouseEventHandler CustomMouseClick;
 
         private void SetEvents(Control target)
         {
@@ -40,19 +44,79 @@ namespace MO_KHNUE.Design
             e.Control.MouseClick -= new MouseEventHandler(Control_MouseClick);
         }
 
+        private bool selectable;
+        public bool Selectable
+        {
+            get
+            {
+                return selectable;
+            }
+            set
+            {
+                selectable = value;
+                if (!selectable)
+                    Selected = false;
+            }
+        }
+
+        private bool selected;
+        public bool Selected
+        {
+            get
+            {
+                return selected;
+            }
+            set
+            {
+                selected = value;
+                if (selected)
+                {
+                    BorderStyle = BorderStyle.FixedSingle;
+                    ForeColor = DownTextColor;
+                    BackColor = AccentElementBackgorundColor;
+                }
+                else
+                {
+                    BorderStyle = BorderStyle.None;
+                    ForeColor = DefaultElementForeColor;
+                    BackColor = DefaultElementBackgorundColor;
+                }
+            }
+        }
+
         private void Control_MouseEnter(object sender, EventArgs e)
         {
+            if (!selected)
+            {
+                ForeColor = HoveredDefaultElementForeColor;
+                BackColor = HoveredDefaultElementBackgorundColor;
+            }
             CustomMouseEnter?.Invoke(sender, e);
         }
 
         private void Control_MouseLeave(object sender, EventArgs e)
         {
+            if (!selected)
+            {
+                ForeColor = DefaultElementForeColor;
+                BackColor = DefaultElementBackgorundColor;
+            }
+            else
+            {
+                ForeColor = DownTextColor;
+                BackColor = AccentElementBackgorundColor;
+            }
             CustomMouseLeave?.Invoke(sender, e);
         }
 
-        private void Control_MouseClick(object sender, EventArgs e)
+        private void Control_MouseClick(object sender, MouseEventArgs e)
         {
-            CustomMouseClick?.Invoke(sender, e);
+            if (selected)
+            {
+                ForeColor = DownTextColor;
+                BackColor = AccentElementBackgorundColor;
+            }
+            CustomMouseClick?.Invoke(this, e);
         }
     }
 }
