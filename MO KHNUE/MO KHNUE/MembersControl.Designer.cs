@@ -73,8 +73,8 @@ namespace MO_KHNUE
             this.memberBlocksList1.TabIndex = 2;
             this.memberBlocksList1.WithControlPanel = true;
             this.memberBlocksList1.BlockClicked += new MO_KHNUE.BlockValueChangedHandler<MO_KHNUE.Entities.Member>(this.memberBlocksList1_MemberChanged);
-            this.memberBlocksList1.ItemRemoveButtonClick += new MO_KHNUE.BlockValueChangedHandler<MO_KHNUE.Entities.Member>(this.RemoveMember);
-            this.memberBlocksList1.ItemAddButtonClick += new MO_KHNUE.BlockValueChangedHandler<Member>(this.AddMember);
+            this.memberBlocksList1.MenuRemoveButtonClick += new MO_KHNUE.BlockValueChangedHandler<MO_KHNUE.Entities.Member>(this.RemoveMember);
+            this.memberBlocksList1.MenuAddButtonClick += new MO_KHNUE.BlockValueChangedHandler<Member>(this.AddMember);
             // 
             // MembersControl
             // 

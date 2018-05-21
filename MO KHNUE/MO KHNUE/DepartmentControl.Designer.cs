@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.departmentHeadBlock = new MO_KHNUE.MemberBlock();
-            this.memberBlocksList1 = new MO_KHNUE.MemberBlockList();
+            this.memberBlocksListCurrent = new MO_KHNUE.MemberBlockList();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.memberBlocksListAll = new MO_KHNUE.MemberBlockList();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.убратьИзОтделаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // departmentHeadBlock
@@ -50,22 +57,25 @@
             this.departmentHeadBlock.TabIndex = 0;
             this.departmentHeadBlock.Value = null;
             // 
-            // memberBlocksList1
+            // memberBlocksListCurrent
             // 
-            this.memberBlocksList1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.memberBlocksListCurrent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.memberBlocksList1.AutoScroll = true;
-            this.memberBlocksList1.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.memberBlocksList1.Location = new System.Drawing.Point(0, 226);
-            this.memberBlocksList1.Margin = new System.Windows.Forms.Padding(4);
-            this.memberBlocksList1.MinItemSize = 400;
-            this.memberBlocksList1.Name = "memberBlocksList1";
-            this.memberBlocksList1.OnTypeSearch = true;
-            this.memberBlocksList1.Selectable = true;
-            this.memberBlocksList1.Size = new System.Drawing.Size(1283, 254);
-            this.memberBlocksList1.TabIndex = 1;
-            this.memberBlocksList1.WithControlPanel = true;
+            this.memberBlocksListCurrent.AutoScroll = true;
+            this.memberBlocksListCurrent.Caption = "Участники отдела";
+            this.memberBlocksListCurrent.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.memberBlocksListCurrent.Location = new System.Drawing.Point(4, 4);
+            this.memberBlocksListCurrent.Margin = new System.Windows.Forms.Padding(4);
+            this.memberBlocksListCurrent.MinItemSize = 400;
+            this.memberBlocksListCurrent.Name = "memberBlocksListCurrent";
+            this.memberBlocksListCurrent.OneColumn = false;
+            this.memberBlocksListCurrent.OnTypeSearch = true;
+            this.memberBlocksListCurrent.Selectable = true;
+            this.memberBlocksListCurrent.Size = new System.Drawing.Size(615, 513);
+            this.memberBlocksListCurrent.TabIndex = 1;
+            this.memberBlocksListCurrent.WithControlPanel = true;
+            this.memberBlocksListCurrent.WithToolbox = true;
             // 
             // label1
             // 
@@ -81,20 +91,73 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 32);
+            this.label2.Size = new System.Drawing.Size(0, 32);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Участники отдела";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.memberBlocksListCurrent, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.memberBlocksListAll, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 137);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1247, 521);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // memberBlocksListAll
+            // 
+            this.memberBlocksListAll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.memberBlocksListAll.AutoScroll = true;
+            this.memberBlocksListAll.Caption = "Добавить участника";
+            this.memberBlocksListAll.Font = new System.Drawing.Font("Segoe UI", 11.25F);
+            this.memberBlocksListAll.Location = new System.Drawing.Point(627, 4);
+            this.memberBlocksListAll.Margin = new System.Windows.Forms.Padding(4);
+            this.memberBlocksListAll.MinItemSize = 400;
+            this.memberBlocksListAll.Name = "memberBlocksListAll";
+            this.memberBlocksListAll.OneColumn = false;
+            this.memberBlocksListAll.OnTypeSearch = true;
+            this.memberBlocksListAll.Selectable = true;
+            this.memberBlocksListAll.Size = new System.Drawing.Size(616, 513);
+            this.memberBlocksListAll.TabIndex = 1;
+            this.memberBlocksListAll.WithControlPanel = true;
+            this.memberBlocksListAll.WithToolbox = true;
+            this.memberBlocksListAll.BlockDoubleClicked += new MO_KHNUE.BlockValueChangedHandler<MO_KHNUE.Entities.Member>(this.AddMember);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.убратьИзОтделаToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(199, 28);
+            // 
+            // убратьИзОтделаToolStripMenuItem
+            // 
+            this.убратьИзОтделаToolStripMenuItem.Name = "убратьИзОтделаToolStripMenuItem";
+            this.убратьИзОтделаToolStripMenuItem.Size = new System.Drawing.Size(198, 24);
+            this.убратьИзОтделаToolStripMenuItem.Text = "Убрать из отдела";
             // 
             // DepartmentControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.memberBlocksList1);
             this.Controls.Add(this.departmentHeadBlock);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.Name = "DepartmentControl";
-            this.Size = new System.Drawing.Size(1287, 484);
+            this.Size = new System.Drawing.Size(1247, 658);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,8 +166,12 @@
         #endregion
 
         private MemberBlock departmentHeadBlock;
-        private MemberBlockList memberBlocksList1;
+        private MemberBlockList memberBlocksListCurrent;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private MemberBlockList memberBlocksListAll;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem убратьИзОтделаToolStripMenuItem;
     }
 }

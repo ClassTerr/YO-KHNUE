@@ -11,13 +11,35 @@ namespace MO_KHNUE
     public partial class BlocksList<T> : UserControl where T : class
     {
         public event BlockValueChangedHandler<T> BlockClicked;
-        public event BlockValueChangedHandler<T> ItemRemoveButtonClick;
-        public event BlockValueChangedHandler<T> ItemEditButtonClick;
-        public event BlockValueChangedHandler<T> ItemAddButtonClick;
+        public event BlockValueChangedHandler<T> BlockDoubleClicked;
+        public event BlockValueChangedHandler<T> MenuAddButtonClick;
+        public event BlockValueChangedHandler<T> MenuRemoveButtonClick;
+        public event BlockValueChangedHandler<T> MenuEditButtonClick;
+        public event BlockValueChangedHandler<T> MenuDetailsButtonClick;
+
+        public IconButton AddButton { get; private set; }
+        public IconButton RemoveButton { get; private set; }
+        public IconButton EditButton { get; private set; }
+        public IconButton DetailsButton { get; private set; }
 
         public Type BlockType = null;
 
         public bool WithControlPanel { get => controlPanel.Visible; set => controlPanel.Visible = value; }
+        public bool WithToolbox { get => toolbox.Visible; set => toolbox.Visible = value; }
+        public string Caption { get => captionPanel.Text; set => captionPanel.Text = value; }
+
+
+
+        private bool oneColumn = false;
+        public bool OneColumn
+        {
+            get => oneColumn;
+            set
+            {
+                oneColumn = value;
+                Form_Resize(null, null);
+            }
+        }
 
         List<T> Values { get; set; } = new List<T>();
 
@@ -28,23 +50,30 @@ namespace MO_KHNUE
             var t = typeof(T);
             if (t == typeof(Member))
                 BlockType = typeof(MemberBlock);
+            else
             if (t == typeof(Department))
                 BlockType = typeof(DepartmentBlock);
+            else
+                BlockType = typeof(Block<Object>);
 
             InitializeComponent();
             InitTable();
             controlPanel.BackColor = Theme.HoveredDefaultElementBackgorundColor;
-            CreateButton("", val =>
+            AddButton = CreateButton("", val =>
             {
-                ItemAddButtonClick?.Invoke(GetSelectedValue());
+                MenuAddButtonClick?.Invoke(GetSelectedValue());
             });
-            CreateButton("", val =>
+            RemoveButton = CreateButton("", val =>
             {
-                ItemRemoveButtonClick?.Invoke(GetSelectedValue());
+                MenuRemoveButtonClick?.Invoke(GetSelectedValue());
             });
-            CreateButton("", val =>
+            EditButton = CreateButton("", val =>
             {
-                ItemEditButtonClick?.Invoke(GetSelectedValue());
+                MenuEditButtonClick?.Invoke(GetSelectedValue());
+            });
+            DetailsButton = CreateButton("", val =>
+            {
+                MenuDetailsButtonClick?.Invoke(GetSelectedValue());
             });
         }
 
@@ -71,6 +100,7 @@ namespace MO_KHNUE
 
         void InitTable()
         {
+            Click += (s, e) => ClearSelection();
             table.Click += (s, e) => ClearSelection();
             table.BackColor = Theme.DefaultBackgorundColor;
             table.ControlAdded += new ControlEventHandler(tableLayoutPanel1_ControlAdded);
@@ -139,13 +169,14 @@ namespace MO_KHNUE
 
         public void AddValues(List<T> values)
         {
-            Block<T>[] blocks = new Block<T>[values.Count];
-            for (int i = 0; i < values.Count; i++)
+            Block<T>[] blocks = new Block<T>[values?.Count ?? 0];
+            for (int i = 0; i < blocks.Length; i++)
             {
                 blocks[i] = CreateBlock(values[i]);
             }
             table.Controls.AddRange(blocks);
-            Values.AddRange(values);
+            if (values != null)
+                Values.AddRange(values);
         }
 
         public void AddValue(T value)
@@ -164,21 +195,25 @@ namespace MO_KHNUE
 
             block.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
             block.Selectable = selectable;
-            
 
-            block.CustomMouseClick += (s, e) =>
+
+            block.CustomMouseClick += () =>
             {
                 BlockClicked?.Invoke(block.Value);
                 if (!selectable)
                     return;
 
-                foreach (var item in table.Controls)
-                {
-                    if (item is Block<T> mblk)
-                    {
-                        mblk.Selected = false;
-                    }
-                }
+                ClearSelection();
+                block.Selected = true;
+            };
+
+            block.CustomMouseDoubleClick += () =>
+            {
+                BlockDoubleClicked?.Invoke(block.Value);
+                if (!selectable)
+                    return;
+
+                ClearSelection();
                 block.Selected = true;
             };
             return block;
@@ -198,7 +233,9 @@ namespace MO_KHNUE
 
         private void Form_Resize(object sender, EventArgs e)
         {
-            table.ColumnCount = Math.Max(1, Math.Min(Values.Count, table.ClientSize.Width / MinItemSize));
+            if (oneColumn)
+                table.ColumnCount = 1;
+            else table.ColumnCount = Math.Max(1, Math.Min(Values.Count, table.ClientSize.Width / MinItemSize));
         }
 
         private void tableLayoutPanel1_ControlAdded(object sender, ControlEventArgs e)
@@ -210,17 +247,17 @@ namespace MO_KHNUE
             Form_Resize(null, null);
         }
 
-        private void addValueButton_Click(object sender, EventArgs e)
+        private void AddValueButton_Click(object sender, EventArgs e)
         {
-            ItemAddButtonClick?.Invoke(null);
+            MenuAddButtonClick?.Invoke(null);
         }
 
-        private void removeValueButton_Click(object sender, EventArgs e)
+        private void RemoveValueButton_Click(object sender, EventArgs e)
         {
-            ItemRemoveButtonClick?.Invoke(GetSelectedValue());
+            MenuRemoveButtonClick?.Invoke(GetSelectedValue());
         }
 
-        private void searchBoxTyped(object sender, EventArgs e)
+        private void SearchBoxTyped(object sender, EventArgs e)
         {
             if (!OnTypeSearch)
                 return;
@@ -228,7 +265,7 @@ namespace MO_KHNUE
             FilterList(searchField.Text);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
             FilterList(searchField.Text);
         }
@@ -242,6 +279,18 @@ namespace MO_KHNUE
                     ctrl.Visible = block.IsMatches(text);
                 }
             }
+        }
+
+        public IconButton CreateButton(string text)
+        {
+            IconButton button = new IconButton
+            {
+                Dock = DockStyle.Left,
+                Text = text
+            };
+            toolbox.Controls.Add(button);
+            button.BringToFront();
+            return button;
         }
 
         public IconButton CreateButton(string text, BlockValueChangedHandler<T> onClick)

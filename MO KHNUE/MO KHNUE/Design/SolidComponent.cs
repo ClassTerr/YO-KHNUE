@@ -20,7 +20,8 @@ namespace MO_KHNUE.Design
 
         public event EventHandler CustomMouseEnter;
         public event EventHandler CustomMouseLeave;
-        public event MouseEventHandler CustomMouseClick;
+        public event Action CustomMouseClick;
+        public event Action CustomMouseDoubleClick;
 
         private void SetEvents(Control target)
         {
@@ -35,6 +36,7 @@ namespace MO_KHNUE.Design
             e.Control.MouseEnter += new EventHandler(Control_MouseEnter);
             e.Control.MouseLeave += new EventHandler(Control_MouseLeave);
             e.Control.MouseClick += new MouseEventHandler(Control_MouseClick);
+            e.Control.MouseDoubleClick += new MouseEventHandler(Control_MouseDoubleClick);
         }
 
         void Form_ControlRemoved(object sender, ControlEventArgs e)
@@ -42,6 +44,7 @@ namespace MO_KHNUE.Design
             e.Control.MouseEnter -= new EventHandler(Control_MouseEnter);
             e.Control.MouseLeave -= new EventHandler(Control_MouseLeave);
             e.Control.MouseClick -= new MouseEventHandler(Control_MouseClick);
+            e.Control.MouseDoubleClick -= new MouseEventHandler(Control_MouseDoubleClick);
         }
 
         private bool selectable;
@@ -116,7 +119,28 @@ namespace MO_KHNUE.Design
                 ForeColor = DownTextColor;
                 BackColor = AccentElementBackgorundColor;
             }
-            CustomMouseClick?.Invoke(this, e);
+            CustomMouseClick?.Invoke();
+        }
+
+        private void Control_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (selected)
+            {
+                ForeColor = DownTextColor;
+                BackColor = AccentElementBackgorundColor;
+            }
+            CustomMouseDoubleClick?.Invoke();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // SolidComponent
+            // 
+            this.Name = "SolidComponent";
+            this.ResumeLayout(false);
+
         }
     }
 }

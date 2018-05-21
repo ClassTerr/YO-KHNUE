@@ -47,6 +47,7 @@ namespace MO_KHNUE.Database
             var pm = new Department()
             {
                 Name = "PM",
+                FullName = "Project Management",
                 Head = artem
             };
 
@@ -56,6 +57,7 @@ namespace MO_KHNUE.Database
             var pr = new Department()
             {
                 Name = "PR",
+                FullName = "Public Relations",
                 Head = ann
             };
 

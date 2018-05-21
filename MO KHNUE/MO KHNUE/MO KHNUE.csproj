@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -70,11 +88,23 @@
     <Compile Include="Database\Context.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\DBSeed.cs" />
+    <Compile Include="DepartmentBlockList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentBlockList.Designer.cs">
+      <DependentUpon>DepartmentBlockList.cs</DependentUpon>
+    </Compile>
     <Compile Include="DepartmentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DepartmentControl.Designer.cs">
       <DependentUpon>DepartmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentInfoControl.Designer.cs">
+      <DependentUpon>DepartmentInfoControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DepartmentsForm.cs">
       <SubType>Form</SubType>
@@ -188,8 +218,14 @@
     <EmbeddedResource Include="DepartmentControl.resx">
       <DependentUpon>DepartmentControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentInfoControl.resx">
+      <DependentUpon>DepartmentInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DepartmentsForm.resx">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\SolidComponent.resx">
+      <DependentUpon>SolidComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

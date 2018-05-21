@@ -5,11 +5,17 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MO_KHNUE
 {
     public static class Utils
     {
+        public static void ShowContent(Control c)
+        {
+            MainForm.instance.ShowContent(c);
+        }
+
         // makes nice round ellipse/circle images from rectangle images
         public static Image ClipToCircle(Image srcImage)
         {

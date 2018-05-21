@@ -1,4 +1,5 @@
-﻿using MO_KHNUE.Entities;
+﻿using static MO_KHNUE.Database.DBContext;
+using MO_KHNUE.Entities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -17,27 +18,54 @@ namespace MO_KHNUE
 
         void Init()
         {
-            var departments = Database.DBContext.UpdateDbContext().Departments;
+            var departments = UpdateDbContext().Departments;
+            departmentBlockList1.SetValues(departments);
+            departmentBlockList1.OneColumn = true;
+            //departmentBlockList1.table.Dock = DockStyle.Left;
+            //departmentBlockList1.table.Width = 500;
 
-            DepartmentBlock[] blocks = new DepartmentBlock[departments.Count];
-            for (int i = 0; i < departments.Count; i++)
-            {
-                var currentBlock = new DepartmentBlock(departments[i]);
-                currentBlock.CustomMouseClick += (s, e) =>
-                {
-                    MainForm.instance.ShowContent(new DepartmentControl(currentBlock.Value));
-                };
-                currentBlock.Dock = DockStyle.Top;
-                blocks[i] = currentBlock;
-            }
-            /*
-            departmentsFlowLayout.Controls.Clear();
-            departmentsFlowLayout.Controls.AddRange(blocks);*/
+            departmentBlockList1.MenuAddButtonClick += AddClick;
+            departmentBlockList1.MenuRemoveButtonClick += RemoveClick;
+            departmentBlockList1.MenuEditButtonClick += EditClick;
+            departmentBlockList1.MenuDetailsButtonClick += DetailsClick;
+            departmentBlockList1.BlockDoubleClicked += DetailsClick;
+            departmentBlockList1.BlockClicked += LoadBlock;
+            departmentBlockList1.Click += (o, e) => { departmentInfoControl1.InitDepartment(null); };
+
+            departmentInfoControl1.InitDepartment(null);
         }
 
-        public DepartmentsForm(Department department)
+        private void AddClick(Department selected)
         {
-            InitializeComponent();
+            //создание нового отдела
+        }
+
+        private void RemoveClick(Department selected)
+        {
+            //удаление отдела
+            var res = MessageBox.Show("Вы действительно хотите удалить отдел \"" + selected.FullName + "\" из МО?\nЭто действие отменить невозможно.", "Подтверждение", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                var context = UpdateDbContext();
+                context.Departments.Remove(selected);
+                context.SaveChanges();
+                departmentBlockList1.SetValues(context.Departments);
+            }
+        }
+
+        private void EditClick(Department selected)
+        {
+            //изменение отдела
+        }
+
+        private void DetailsClick(Department selected)
+        {
+            Utils.ShowContent(new DepartmentControl(selected));
+        }
+
+        private void LoadBlock(Department selected)
+        {
+            departmentInfoControl1.InitDepartment(selected);
         }
     }
 }

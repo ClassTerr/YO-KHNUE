@@ -20,9 +20,22 @@ namespace MO_KHNUE.Entities
         [Key]
         public Guid ID;
         public string Name;
+        public string FullName;
         public Member Head;
-        public List<Member> Members;
         public Image Image;
+        public List<Member> Members;
+
+        public int MembersCount
+        {
+            get
+            {
+                int res = Members.Count;
+                if (!Members.Contains(Head))
+                    res++;
+                return res;
+            }
+        }
+
 
         public override string ToString()
         {

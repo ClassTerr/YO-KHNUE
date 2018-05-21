@@ -12,7 +12,7 @@ namespace MO_KHNUE
         public OverviewForm()
         {
             InitializeComponent();
-            InitForm(UpdateDbContext());
+            //InitForm(UpdateDbContext());
         }
 
         private void InitForm(DBContext context)
@@ -30,7 +30,7 @@ namespace MO_KHNUE
 
                 b.Click += (e, s) =>
                 {
-                    MainForm.instance.ShowContent(new DepartmentsForm(item));
+                    MainForm.instance.ShowContent(new DepartmentsForm());
                 };
 
                 flowLayoutPanel1.Controls.Add(b);

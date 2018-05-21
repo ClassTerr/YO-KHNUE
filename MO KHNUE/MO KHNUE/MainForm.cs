@@ -25,8 +25,8 @@ namespace MO_KHNUE
             instance = this;
             this.BackButton.Click += (s, a) => BackButtonClick();
             UpdateDbContext().SaveChanges();
-            iconButton1.AutoSize = iconButton2.AutoSize = iconButton3.AutoSize = iconButton4.AutoSize = false;
-            iconButton1.Size = iconButton2.Size = iconButton3.Size = iconButton4.Size = new Size(80, 60);
+            iconButton1.AutoSize = iconButton2.AutoSize = iconButton3.AutoSize = iconButton4.AutoSize = iconButton5.AutoSize = false;
+            iconButton1.Size = iconButton2.Size = iconButton3.Size = iconButton4.Size = iconButton5.Size = new Size(80, 60);
         }
         
         protected override CreateParams CreateParams
@@ -86,7 +86,6 @@ namespace MO_KHNUE
 
         private void ShowOverview(object sender, EventArgs e)
         {
-            ClearWindows();
             ShowContent(new OverviewForm());
         }
 
@@ -116,19 +115,22 @@ namespace MO_KHNUE
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            ClearWindows();
             ShowContent(new DepartmentsForm());
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void PictureBox3_Click(object sender, EventArgs e)
         {
 
         }
 
         private void ShowMembers(object sender, EventArgs e)
         {
-
             ShowContent(new MembersControl());
+        }
+
+        private void GOHOME(object sender, EventArgs e)
+        {
+            ClearWindows();
         }
     }
 }

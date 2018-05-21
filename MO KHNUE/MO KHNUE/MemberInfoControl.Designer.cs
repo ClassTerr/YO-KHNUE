@@ -34,6 +34,7 @@
             this.editButton = new Borderless.Buttons.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.outputGroup = new System.Windows.Forms.Label();
             this.iconButtonSmall5 = new MO_KHNUE.IconButtonSmall();
             this.iconButtonSmall2 = new MO_KHNUE.IconButtonSmall();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,7 +50,6 @@
             this.iconButtonSmall6 = new MO_KHNUE.IconButtonSmall();
             this.outputCource = new System.Windows.Forms.Label();
             this.outputName = new System.Windows.Forms.Label();
-            this.outputGroup = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.headPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -129,6 +129,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(496, 40);
             this.panel1.TabIndex = 12;
+            // 
+            // outputGroup
+            // 
+            this.outputGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.outputGroup.AutoSize = true;
+            this.outputGroup.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.outputGroup.Location = new System.Drawing.Point(172, 4);
+            this.outputGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.outputGroup.Name = "outputGroup";
+            this.outputGroup.Size = new System.Drawing.Size(152, 32);
+            this.outputGroup.TabIndex = 12;
+            this.outputGroup.Text = "6.04.51.15.01";
+            this.outputGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // iconButtonSmall5
             // 
@@ -254,15 +267,16 @@
             // panel6
             // 
             this.panel6.AutoScroll = true;
+            this.panel6.AutoSize = true;
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.panel3);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 360);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 377);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(496, 242);
+            this.panel6.Size = new System.Drawing.Size(496, 200);
             this.panel6.TabIndex = 18;
             // 
             // panel7
@@ -307,23 +321,10 @@
             this.outputName.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.outputName.Location = new System.Drawing.Point(0, 247);
             this.outputName.Name = "outputName";
-            this.outputName.Size = new System.Drawing.Size(496, 113);
+            this.outputName.Size = new System.Drawing.Size(496, 130);
             this.outputName.TabIndex = 20;
             this.outputName.Text = "Name Surname";
             this.outputName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // outputGroup
-            // 
-            this.outputGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.outputGroup.AutoSize = true;
-            this.outputGroup.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.outputGroup.Location = new System.Drawing.Point(172, 4);
-            this.outputGroup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.outputGroup.Name = "outputGroup";
-            this.outputGroup.Size = new System.Drawing.Size(152, 32);
-            this.outputGroup.TabIndex = 12;
-            this.outputGroup.Text = "6.04.51.15.01";
-            this.outputGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MemberInfoControl
             // 
@@ -337,7 +338,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MemberInfoControl";
-            this.Size = new System.Drawing.Size(496, 602);
+            this.Size = new System.Drawing.Size(496, 608);
             ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.headPanel.ResumeLayout(false);
             this.headPanel.PerformLayout();
@@ -355,6 +356,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

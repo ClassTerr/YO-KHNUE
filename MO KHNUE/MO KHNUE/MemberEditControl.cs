@@ -40,7 +40,7 @@ namespace MO_KHNUE.Entities
             outputCourse.TextChanged += new System.EventHandler(Edited);
         }
 
-        public event MemberChangedHandler MemberChanged;
+        public event BlockValueChangedHandler<Member> MemberChanged;
 
         public void ClearInfo()
         {

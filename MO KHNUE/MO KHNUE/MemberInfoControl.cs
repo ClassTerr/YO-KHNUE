@@ -21,7 +21,7 @@ namespace MO_KHNUE.Entities
             headPanel.BackColor = AccentElementBackgorundColor;
         }
 
-        public event MemberChangedHandler MemberChanged;
+        public event BlockValueChangedHandler<Member> MemberChanged;
 
         public MemberInfoControl(Member member)
         {

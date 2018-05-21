@@ -37,6 +37,7 @@
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.iconButton1 = new Borderless.Buttons.IconButton();
             this.menuPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.iconButton5 = new Borderless.Buttons.IconButton();
             this.controlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.menuPanel.SuspendLayout();
@@ -49,7 +50,7 @@
             this.iconButton4.AutoSize = true;
             this.iconButton4.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton4.ForeColor = System.Drawing.Color.Black;
-            this.iconButton4.Location = new System.Drawing.Point(0, 100);
+            this.iconButton4.Location = new System.Drawing.Point(0, 150);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(72, 50);
@@ -57,7 +58,7 @@
             this.iconButton4.Text = "";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.iconButton4, "События");
-            this.iconButton4.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.iconButton4.Click += new System.EventHandler(this.PictureBox3_Click);
             this.iconButton4.MouseEnter += new System.EventHandler(this.MenuItem_MouseEnter);
             this.iconButton4.MouseLeave += new System.EventHandler(this.MenuItem_MouseLeave);
             this.iconButton4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.iconButton1_MouseUp);
@@ -69,7 +70,7 @@
             this.iconButton3.AutoSize = true;
             this.iconButton3.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton3.ForeColor = System.Drawing.Color.Black;
-            this.iconButton3.Location = new System.Drawing.Point(0, 50);
+            this.iconButton3.Location = new System.Drawing.Point(0, 100);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(67, 50);
@@ -89,7 +90,7 @@
             this.iconButton2.AutoSize = true;
             this.iconButton2.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton2.ForeColor = System.Drawing.Color.Black;
-            this.iconButton2.Location = new System.Drawing.Point(0, 0);
+            this.iconButton2.Location = new System.Drawing.Point(0, 50);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(72, 50);
@@ -134,7 +135,7 @@
             this.iconButton1.AutoSize = true;
             this.iconButton1.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.Location = new System.Drawing.Point(0, 150);
+            this.iconButton1.Location = new System.Drawing.Point(0, 200);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(66, 50);
@@ -150,6 +151,7 @@
             // 
             this.menuPanel.AutoSize = true;
             this.menuPanel.BackColor = System.Drawing.Color.White;
+            this.menuPanel.Controls.Add(this.iconButton5);
             this.menuPanel.Controls.Add(this.iconButton2);
             this.menuPanel.Controls.Add(this.iconButton3);
             this.menuPanel.Controls.Add(this.iconButton4);
@@ -160,6 +162,25 @@
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(72, 576);
             this.menuPanel.TabIndex = 14;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton5.AutoSize = true;
+            this.iconButton5.Font = new System.Drawing.Font("UI", 30F);
+            this.iconButton5.ForeColor = System.Drawing.Color.Black;
+            this.iconButton5.Location = new System.Drawing.Point(0, 0);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(72, 50);
+            this.iconButton5.TabIndex = 4;
+            this.iconButton5.Text = "";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.iconButton5.Click += new System.EventHandler(this.GOHOME);
+            this.iconButton5.MouseEnter += new System.EventHandler(this.MenuItem_MouseEnter);
+            this.iconButton5.MouseLeave += new System.EventHandler(this.MenuItem_MouseLeave);
+            this.iconButton5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.iconButton1_MouseUp);
             // 
             // MainForm
             // 
@@ -194,6 +215,7 @@
         private Borderless.Buttons.IconButton iconButton3;
         private Borderless.Buttons.IconButton iconButton2;
         private System.Windows.Forms.FlowLayoutPanel menuPanel;
+        private Borderless.Buttons.IconButton iconButton5;
     }
 }
 

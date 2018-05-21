@@ -40,7 +40,7 @@ namespace MO_KHNUE
         public void InitValue(Department department)
         {
             base.Value = department;
-            label1.Text = department.Name;
+            label1.Text = department.FullName;
 
 
             int count = department.Members.Count;

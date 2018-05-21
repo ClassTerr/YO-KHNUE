@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.controlPanel = new System.Windows.Forms.Panel();
+            this.toolbox = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.captionPanel = new System.Windows.Forms.Label();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.searchField = new System.Windows.Forms.TextBox();
             this.searchButton = new Borderless.Buttons.IconButton();
             this.table = new System.Windows.Forms.TableLayoutPanel();
-            this.toolbox = new System.Windows.Forms.Panel();
             this.controlPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.searchPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,13 +45,40 @@
             // 
             this.controlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.controlPanel.Controls.Add(this.toolbox);
+            this.controlPanel.Controls.Add(this.panel1);
             this.controlPanel.Controls.Add(this.searchPanel);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.controlPanel.Location = new System.Drawing.Point(0, 0);
             this.controlPanel.Name = "controlPanel";
             this.controlPanel.Size = new System.Drawing.Size(1092, 57);
             this.controlPanel.TabIndex = 5;
-            this.controlPanel.Visible = false;
+            // 
+            // toolbox
+            // 
+            this.toolbox.AutoSize = true;
+            this.toolbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolbox.Location = new System.Drawing.Point(6, 0);
+            this.toolbox.Name = "toolbox";
+            this.toolbox.Size = new System.Drawing.Size(742, 55);
+            this.toolbox.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.captionPanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(6, 55);
+            this.panel1.TabIndex = 9;
+            // 
+            // captionPanel
+            // 
+            this.captionPanel.AutoSize = true;
+            this.captionPanel.Location = new System.Drawing.Point(3, 14);
+            this.captionPanel.Name = "captionPanel";
+            this.captionPanel.Size = new System.Drawing.Size(0, 25);
+            this.captionPanel.TabIndex = 0;
             // 
             // searchPanel
             // 
@@ -67,7 +97,7 @@
             this.searchField.Name = "searchField";
             this.searchField.Size = new System.Drawing.Size(294, 32);
             this.searchField.TabIndex = 0;
-            this.searchField.TextChanged += new System.EventHandler(this.searchBoxTyped);
+            this.searchField.TextChanged += new System.EventHandler(this.SearchBoxTyped);
             // 
             // searchButton
             // 
@@ -81,7 +111,7 @@
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.searchButton.Click += new System.EventHandler(this.iconButton1_Click);
+            this.searchButton.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // table
             // 
@@ -101,14 +131,6 @@
             this.table.Size = new System.Drawing.Size(1092, 259);
             this.table.TabIndex = 6;
             // 
-            // toolbox
-            // 
-            this.toolbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolbox.Location = new System.Drawing.Point(0, 0);
-            this.toolbox.Name = "toolbox";
-            this.toolbox.Size = new System.Drawing.Size(748, 55);
-            this.toolbox.TabIndex = 7;
-            // 
             // BlocksList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -120,6 +142,9 @@
             this.Size = new System.Drawing.Size(1092, 316);
             this.Resize += new System.EventHandler(this.Form_Resize);
             this.controlPanel.ResumeLayout(false);
+            this.controlPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.searchPanel.ResumeLayout(false);
             this.searchPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -131,7 +156,9 @@
         public System.Windows.Forms.Panel searchPanel;
         public Borderless.Buttons.IconButton searchButton;
         public System.Windows.Forms.TextBox searchField;
-        private System.Windows.Forms.TableLayoutPanel table;
+        public System.Windows.Forms.TableLayoutPanel table;
         private System.Windows.Forms.Panel toolbox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label captionPanel;
     }
 }
