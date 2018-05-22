@@ -1,4 +1,5 @@
 ﻿using MO_KHNUE.Controllers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -28,8 +29,28 @@ namespace MO_KHNUE.Entities
         public int Course;
         public string Email;
         public DateTime BirthDay;
-        public Image Photo;
+        public string PhotoString;
+        [JsonIgnore]
+        private Image photo = null;
+        [JsonIgnore]
+        public Image Photo
+        {
+            get
+            {
+                if (photo == null && !String.IsNullOrEmpty(PhotoString))
+                {
+                    return photo = Utils.StringToImage(PhotoString);
+                }
 
+                return photo;
+            }
+            set
+            {
+                PhotoString = Utils.ImageToString(value);
+                photo = value;
+            }
+        }
+        [JsonIgnore]
         public string FullName
         {
             get { return Name + " " + Surname; }

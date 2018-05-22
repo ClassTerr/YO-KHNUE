@@ -116,6 +116,12 @@
     <Compile Include="Design\SolidComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="EventsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventsControl.Designer.cs">
+      <DependentUpon>EventsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     <EmbeddedResource Include="Design\SolidComponent.resx">
       <DependentUpon>SolidComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EventsControl.resx">
+      <DependentUpon>EventsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -305,6 +314,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserImagePlaceholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Balyanitsa.A.Square.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

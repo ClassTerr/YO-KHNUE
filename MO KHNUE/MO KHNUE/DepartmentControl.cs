@@ -49,7 +49,7 @@ namespace MO_KHNUE
                     memberBlocksListAll.ClearValues();
                 }
             }
-            catch
+            catch (Exception e)
             {
                 MessageBox.Show("Не удалось загрузить список доступных участников!");
             }
@@ -116,7 +116,7 @@ namespace MO_KHNUE
 
                 if (currentValue == null || department == null)
                 {
-                    MessageBox.Show("Ошибка! Данных болше не существует!");
+                    MessageBox.Show("Ошибка! Данных больше не существует!");
                     return;
                 }
 

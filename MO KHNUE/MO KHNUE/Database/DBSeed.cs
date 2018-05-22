@@ -18,6 +18,7 @@ namespace MO_KHNUE.Database
                 Course = 3,
                 Email = "artemium97@gmail.com",
                 Phone = "380958338701",
+                Photo = MO_KHNUE.Properties.Resources.Balyanitsa_A_Square,
                 Group = "6.04.51.15.01",
                 BirthDay = new DateTime(1997, 5, 30)
             };

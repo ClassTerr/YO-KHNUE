@@ -13,7 +13,6 @@ namespace MO_KHNUE.Entities
         public DateTime End;
         public Place Place;
         public Member ResponsibleMember;
-        public bool Done;
 
         public override string ToString()
         {

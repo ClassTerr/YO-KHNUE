@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +28,7 @@ namespace MO_KHNUE
 
         public static Image ClipToCircle(Image srcImage, PointF center, float radius, Color backGround)
         {
-            Image dstImage = new Bitmap(srcImage.Width, srcImage.Height, srcImage.PixelFormat);
+            Image dstImage = new Bitmap(srcImage.Width, srcImage.Height, PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(dstImage))
             {
@@ -46,9 +48,27 @@ namespace MO_KHNUE
                 GraphicsPath path = new GraphicsPath();
                 path.AddEllipse(r);
                 g.SetClip(path);
-                g.DrawImage(srcImage, 0, 0);
+                g.DrawImage(srcImage, 0, 0, dstImage.Width, dstImage.Height);
                 return dstImage;
             }
+        }
+
+        public static string ImageToString(Image im)
+        {
+            MemoryStream ms = new MemoryStream();
+            im.Save(ms, im.RawFormat);
+            byte[] array = ms.ToArray();
+            return Convert.ToBase64String(array);
+        }
+
+        public static Image StringToImage(string imageString)
+        {
+            if (imageString == null)
+                throw new ArgumentNullException("imageString");
+
+            byte[] array = Convert.FromBase64String(imageString);
+            Image image = Image.FromStream(new MemoryStream(array));
+            return image;
         }
     }
 }
