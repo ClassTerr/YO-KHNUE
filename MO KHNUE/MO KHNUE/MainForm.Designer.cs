@@ -98,6 +98,7 @@
             this.iconButton2.Text = "";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.iconButton2, "Общая сводка");
+            this.iconButton2.Visible = false;
             this.iconButton2.Click += new System.EventHandler(this.ShowOverview);
             this.iconButton2.MouseEnter += new System.EventHandler(this.MenuItem_MouseEnter);
             this.iconButton2.MouseLeave += new System.EventHandler(this.MenuItem_MouseLeave);

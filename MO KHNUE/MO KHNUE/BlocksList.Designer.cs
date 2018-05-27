@@ -56,10 +56,10 @@
             // toolbox
             // 
             this.toolbox.AutoSize = true;
-            this.toolbox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolbox.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolbox.Location = new System.Drawing.Point(6, 0);
             this.toolbox.Name = "toolbox";
-            this.toolbox.Size = new System.Drawing.Size(742, 55);
+            this.toolbox.Size = new System.Drawing.Size(0, 55);
             this.toolbox.TabIndex = 8;
             // 
             // panel1
@@ -85,17 +85,17 @@
             this.searchPanel.Controls.Add(this.searchField);
             this.searchPanel.Controls.Add(this.searchButton);
             this.searchPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.searchPanel.Location = new System.Drawing.Point(748, 0);
+            this.searchPanel.Location = new System.Drawing.Point(785, 0);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(342, 55);
+            this.searchPanel.Size = new System.Drawing.Size(305, 55);
             this.searchPanel.TabIndex = 6;
             // 
             // searchField
             // 
             this.searchField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchField.Location = new System.Drawing.Point(7, 11);
+            this.searchField.Location = new System.Drawing.Point(12, 11);
             this.searchField.Name = "searchField";
-            this.searchField.Size = new System.Drawing.Size(294, 32);
+            this.searchField.Size = new System.Drawing.Size(250, 32);
             this.searchField.TabIndex = 0;
             this.searchField.TextChanged += new System.EventHandler(this.SearchBoxTyped);
             // 
@@ -105,7 +105,7 @@
             this.searchButton.AutoSize = true;
             this.searchButton.Font = new System.Drawing.Font("UI", 20F);
             this.searchButton.ForeColor = System.Drawing.Color.Black;
-            this.searchButton.Location = new System.Drawing.Point(298, 9);
+            this.searchButton.Location = new System.Drawing.Point(261, 9);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(49, 34);
             this.searchButton.TabIndex = 1;

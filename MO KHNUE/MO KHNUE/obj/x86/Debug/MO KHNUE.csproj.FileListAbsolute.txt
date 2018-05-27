@@ -29,3 +29,6 @@ D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\x86\Debug\MO KHNUE.csproj.CopyComplete
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\x86\Debug\MO KHNUE.exe
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\x86\Debug\MO KHNUE.pdb
 D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\obj\x86\Debug\MO_KHNUE.EventsControl.resources
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\bin\x86\Debug\Calendar.NET.dll
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\bin\x86\Debug\Calendar.NET.pdb
+D:\Github\YO-KHNUE\MO KHNUE\MO KHNUE\bin\x86\Debug\Calendar.NET.xml

@@ -15,6 +15,7 @@ namespace MO_KHNUE
         public EventsControl()
         {
             InitializeComponent();
+            BackColor = Theme.DefaultBackgorundColor;
         }
     }
 }

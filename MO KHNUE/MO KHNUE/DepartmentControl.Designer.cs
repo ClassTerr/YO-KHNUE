@@ -72,7 +72,7 @@
             this.memberBlocksListCurrent.OneColumn = false;
             this.memberBlocksListCurrent.OnTypeSearch = true;
             this.memberBlocksListCurrent.Selectable = true;
-            this.memberBlocksListCurrent.Size = new System.Drawing.Size(615, 513);
+            this.memberBlocksListCurrent.Size = new System.Drawing.Size(640, 513);
             this.memberBlocksListCurrent.TabIndex = 1;
             this.memberBlocksListCurrent.WithControlPanel = true;
             this.memberBlocksListCurrent.WithToolbox = true;
@@ -106,9 +106,10 @@
             this.tableLayoutPanel1.Controls.Add(this.memberBlocksListAll, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 137);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1247, 521);
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1297, 521);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // memberBlocksListAll
@@ -119,14 +120,14 @@
             this.memberBlocksListAll.AutoScroll = true;
             this.memberBlocksListAll.Caption = "Добавить участника";
             this.memberBlocksListAll.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.memberBlocksListAll.Location = new System.Drawing.Point(627, 4);
+            this.memberBlocksListAll.Location = new System.Drawing.Point(652, 4);
             this.memberBlocksListAll.Margin = new System.Windows.Forms.Padding(4);
             this.memberBlocksListAll.MinItemSize = 400;
             this.memberBlocksListAll.Name = "memberBlocksListAll";
             this.memberBlocksListAll.OneColumn = false;
             this.memberBlocksListAll.OnTypeSearch = true;
             this.memberBlocksListAll.Selectable = true;
-            this.memberBlocksListAll.Size = new System.Drawing.Size(616, 513);
+            this.memberBlocksListAll.Size = new System.Drawing.Size(641, 513);
             this.memberBlocksListAll.TabIndex = 1;
             this.memberBlocksListAll.WithControlPanel = true;
             this.memberBlocksListAll.WithToolbox = true;
@@ -155,7 +156,7 @@
             this.Controls.Add(this.departmentHeadBlock);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.Name = "DepartmentControl";
-            this.Size = new System.Drawing.Size(1247, 658);
+            this.Size = new System.Drawing.Size(1297, 658);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

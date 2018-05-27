@@ -1,0 +1,16 @@
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\bin\Debug\Calendar.NET.XML
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\bin\Debug\Calendar.NET.dll
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\bin\Debug\Calendar.NET.pdb
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.csprojResolveAssemblyReference.cache
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.Calendar.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.CoolButton.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.EventDetails.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.EventToolTip.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.NavigateLeftButton.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.NavigateRightButton.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.ScrollPanel.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.TodayButton.resources
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.csproj.GenerateResource.cache
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.csproj.CoreCompileInputs.cache
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.dll
+D:\Github\YO-KHNUE\MO KHNUE\Calendar.NET\obj\Debug\Calendar.NET.pdb
