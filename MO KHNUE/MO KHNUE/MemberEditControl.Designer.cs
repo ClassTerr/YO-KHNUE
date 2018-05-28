@@ -281,7 +281,6 @@
             // 
             this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButton2.AutoSize = true;
-            this.iconButton2.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton2.ForeColor = System.Drawing.Color.ForestGreen;
             this.iconButton2.Location = new System.Drawing.Point(585, 9);
             this.iconButton2.Name = "iconButton2";
@@ -295,7 +294,6 @@
             // 
             this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButton1.AutoSize = true;
-            this.iconButton1.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.iconButton1.Location = new System.Drawing.Point(12, 9);
             this.iconButton1.Name = "iconButton1";

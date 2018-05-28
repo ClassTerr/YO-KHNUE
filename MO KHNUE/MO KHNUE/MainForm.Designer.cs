@@ -48,12 +48,11 @@
             this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton4.AutoSize = true;
-            this.iconButton4.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton4.ForeColor = System.Drawing.Color.Black;
-            this.iconButton4.Location = new System.Drawing.Point(0, 150);
+            this.iconButton4.Location = new System.Drawing.Point(0, 174);
             this.iconButton4.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(72, 50);
+            this.iconButton4.Size = new System.Drawing.Size(50, 58);
             this.iconButton4.TabIndex = 4;
             this.iconButton4.Text = "";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,12 +67,11 @@
             this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton3.AutoSize = true;
-            this.iconButton3.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton3.ForeColor = System.Drawing.Color.Black;
-            this.iconButton3.Location = new System.Drawing.Point(0, 100);
+            this.iconButton3.Location = new System.Drawing.Point(0, 116);
             this.iconButton3.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(67, 50);
+            this.iconButton3.Size = new System.Drawing.Size(50, 58);
             this.iconButton3.TabIndex = 4;
             this.iconButton3.Text = "";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,12 +86,11 @@
             this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton2.AutoSize = true;
-            this.iconButton2.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton2.ForeColor = System.Drawing.Color.Black;
-            this.iconButton2.Location = new System.Drawing.Point(0, 50);
+            this.iconButton2.Location = new System.Drawing.Point(0, 58);
             this.iconButton2.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(72, 50);
+            this.iconButton2.Size = new System.Drawing.Size(50, 58);
             this.iconButton2.TabIndex = 4;
             this.iconButton2.Text = "";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,10 +106,10 @@
             this.controlPanel.BackColor = System.Drawing.Color.DimGray;
             this.controlPanel.Controls.Add(this.logoPictureBox);
             this.controlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.controlPanel.Location = new System.Drawing.Point(75, 37);
+            this.controlPanel.Location = new System.Drawing.Point(53, 37);
             this.controlPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(1135, 576);
+            this.controlPanel.Size = new System.Drawing.Size(1157, 576);
             this.controlPanel.TabIndex = 15;
             // 
             // logoPictureBox
@@ -124,7 +121,7 @@
             this.logoPictureBox.Location = new System.Drawing.Point(0, 0);
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(1135, 576);
+            this.logoPictureBox.Size = new System.Drawing.Size(1157, 576);
             this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
@@ -134,12 +131,11 @@
             this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton1.AutoSize = true;
-            this.iconButton1.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton1.ForeColor = System.Drawing.Color.Black;
-            this.iconButton1.Location = new System.Drawing.Point(0, 200);
+            this.iconButton1.Location = new System.Drawing.Point(0, 232);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(66, 50);
+            this.iconButton1.Size = new System.Drawing.Size(50, 58);
             this.iconButton1.TabIndex = 4;
             this.iconButton1.Text = "";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,7 +157,7 @@
             this.menuPanel.Location = new System.Drawing.Point(3, 37);
             this.menuPanel.Margin = new System.Windows.Forms.Padding(0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(72, 576);
+            this.menuPanel.Size = new System.Drawing.Size(50, 576);
             this.menuPanel.TabIndex = 14;
             // 
             // iconButton5
@@ -169,12 +165,11 @@
             this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton5.AutoSize = true;
-            this.iconButton5.Font = new System.Drawing.Font("UI", 30F);
             this.iconButton5.ForeColor = System.Drawing.Color.Black;
             this.iconButton5.Location = new System.Drawing.Point(0, 0);
             this.iconButton5.Margin = new System.Windows.Forms.Padding(0);
             this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(72, 50);
+            this.iconButton5.Size = new System.Drawing.Size(50, 58);
             this.iconButton5.TabIndex = 4;
             this.iconButton5.Text = "";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

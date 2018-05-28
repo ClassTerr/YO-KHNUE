@@ -21,15 +21,19 @@ namespace Borderless
 
         private static PrivateFontCollection fonts = new PrivateFontCollection();
 
-        static Dictionary<float, Font> myFonts = new Dictionary<float, Font>();
+        static Dictionary<float, WeakReference<Font>> myFonts = new Dictionary<float, WeakReference<Font>>();
 
         public static Font GetUIFont(float size = 30)
         {
             Font font;
-            myFonts.TryGetValue(size, out font);
-            if (font != null)
-                return font;
-            
+            myFonts.TryGetValue(size, out WeakReference<Font> fontWeak);
+            if (fontWeak != null)
+                if (fontWeak.TryGetTarget(out font))
+                    return font;
+                else myFonts.Remove(size);
+
+
+
             byte[] fontData = Resources.UI;
             IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
             System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
@@ -39,7 +43,7 @@ namespace Borderless
             System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
             font = new Font(fonts.Families[0], size);
-            myFonts.Add(size, font);
+            myFonts[size] = new WeakReference<Font>(font);
             return font;
         }
     }

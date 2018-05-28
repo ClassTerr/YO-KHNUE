@@ -74,7 +74,6 @@
             // 
             this.iconButtonSmall6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButtonSmall6.AutoSize = true;
-            this.iconButtonSmall6.Font = new System.Drawing.Font("UI", 20F);
             this.iconButtonSmall6.ForeColor = System.Drawing.Color.Black;
             this.iconButtonSmall6.Location = new System.Drawing.Point(120, 3);
             this.iconButtonSmall6.Name = "iconButtonSmall6";
@@ -144,7 +143,6 @@
             // 
             this.iconButtonSmall5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButtonSmall5.AutoSize = true;
-            this.iconButtonSmall5.Font = new System.Drawing.Font("UI", 20F);
             this.iconButtonSmall5.ForeColor = System.Drawing.Color.Black;
             this.iconButtonSmall5.Location = new System.Drawing.Point(120, 3);
             this.iconButtonSmall5.Name = "iconButtonSmall5";
@@ -157,7 +155,6 @@
             // 
             this.iconButtonSmall2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.iconButtonSmall2.AutoSize = true;
-            this.iconButtonSmall2.Font = new System.Drawing.Font("UI", 20F);
             this.iconButtonSmall2.ForeColor = System.Drawing.Color.Black;
             this.iconButtonSmall2.Location = new System.Drawing.Point(120, 3);
             this.iconButtonSmall2.Name = "iconButtonSmall2";
@@ -179,7 +176,6 @@
             // editButton
             // 
             this.editButton.AutoSize = true;
-            this.editButton.Font = new System.Drawing.Font("UI", 30F);
             this.editButton.ForeColor = System.Drawing.Color.Black;
             this.editButton.Location = new System.Drawing.Point(0, 0);
             this.editButton.Name = "editButton";

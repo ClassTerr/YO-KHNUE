@@ -34,8 +34,8 @@
             this.captionPanel = new System.Windows.Forms.Label();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.searchField = new System.Windows.Forms.TextBox();
-            this.searchButton = new Borderless.Buttons.IconButton();
             this.table = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButtonSmall1 = new MO_KHNUE.IconButtonSmall();
             this.controlPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.searchPanel.SuspendLayout();
@@ -83,7 +83,7 @@
             // searchPanel
             // 
             this.searchPanel.Controls.Add(this.searchField);
-            this.searchPanel.Controls.Add(this.searchButton);
+            this.searchPanel.Controls.Add(this.iconButtonSmall1);
             this.searchPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.searchPanel.Location = new System.Drawing.Point(785, 0);
             this.searchPanel.Name = "searchPanel";
@@ -95,23 +95,9 @@
             this.searchField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.searchField.Location = new System.Drawing.Point(12, 11);
             this.searchField.Name = "searchField";
-            this.searchField.Size = new System.Drawing.Size(250, 32);
+            this.searchField.Size = new System.Drawing.Size(249, 32);
             this.searchField.TabIndex = 0;
             this.searchField.TextChanged += new System.EventHandler(this.SearchBoxTyped);
-            // 
-            // searchButton
-            // 
-            this.searchButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.searchButton.AutoSize = true;
-            this.searchButton.Font = new System.Drawing.Font("UI", 20F);
-            this.searchButton.ForeColor = System.Drawing.Color.Black;
-            this.searchButton.Location = new System.Drawing.Point(261, 9);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(49, 34);
-            this.searchButton.TabIndex = 1;
-            this.searchButton.Text = "";
-            this.searchButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.searchButton.Click += new System.EventHandler(this.IconButton1_Click);
             // 
             // table
             // 
@@ -130,6 +116,18 @@
             this.table.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.table.Size = new System.Drawing.Size(1092, 259);
             this.table.TabIndex = 6;
+            // 
+            // iconButtonSmall1
+            // 
+            this.iconButtonSmall1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonSmall1.AutoSize = true;
+            this.iconButtonSmall1.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSmall1.Location = new System.Drawing.Point(257, 11);
+            this.iconButtonSmall1.Name = "iconButtonSmall1";
+            this.iconButtonSmall1.Size = new System.Drawing.Size(49, 34);
+            this.iconButtonSmall1.TabIndex = 2;
+            this.iconButtonSmall1.Text = "";
+            this.iconButtonSmall1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BlocksList
             // 
@@ -154,11 +152,11 @@
         #endregion
         public System.Windows.Forms.Panel controlPanel;
         public System.Windows.Forms.Panel searchPanel;
-        public Borderless.Buttons.IconButton searchButton;
         public System.Windows.Forms.TextBox searchField;
         public System.Windows.Forms.TableLayoutPanel table;
         private System.Windows.Forms.Panel toolbox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label captionPanel;
+        private IconButtonSmall iconButtonSmall1;
     }
 }
