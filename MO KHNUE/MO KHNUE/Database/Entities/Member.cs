@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace MO_KHNUE.Entities
 {
-    [Table("Members")]
     public class Member : IEquatable<Member>, ISearchable
     {
         public Member()

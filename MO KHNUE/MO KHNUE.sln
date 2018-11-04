@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MO KHNUE", "MO KHNUE\MO KHN
 		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3} = {6CBC43B6-E950-49B2-B14A-563C50FCD5C3}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.NET", "Calendar.NET\Calendar.NET.csproj", "{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar", "Calendar.NET\Calendar.csproj", "{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

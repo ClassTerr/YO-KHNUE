@@ -11,8 +11,6 @@ namespace MO_KHNUE.Database
         {
             var connStr = ConfigurationManager.ConnectionStrings["RedisConnection"].ConnectionString;
             return ConnectionMultiplexer.Connect(connStr);
-
-            //return ConnectionMultiplexer.Connect("localhost");
         });
 
         public static ConnectionMultiplexer Connection

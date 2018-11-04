@@ -74,13 +74,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Block.cs">
+    <Compile Include="Design\Controls\Block.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BorderlessForm.cs">
+    <Compile Include="Design\Controls\BorderlessForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BorderlessForm.Designer.cs">
+    <Compile Include="Design\Controls\BorderlessForm.Designer.cs">
       <DependentUpon>BorderlessForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\IBlock.cs" />
@@ -88,28 +88,28 @@
     <Compile Include="Database\Context.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="Database\DBSeed.cs" />
-    <Compile Include="DepartmentBlockList.cs">
+    <Compile Include="Design\Controls\DepartmentBlockList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DepartmentBlockList.Designer.cs">
+    <Compile Include="Design\Controls\DepartmentBlockList.Designer.cs">
       <DependentUpon>DepartmentBlockList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentControl.cs">
+    <Compile Include="Design\Controls\DepartmentControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DepartmentControl.Designer.cs">
+    <Compile Include="Design\Controls\DepartmentControl.Designer.cs">
       <DependentUpon>DepartmentControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentInfoControl.cs">
+    <Compile Include="Design\Controls\DepartmentInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DepartmentInfoControl.Designer.cs">
+    <Compile Include="Design\Controls\DepartmentInfoControl.Designer.cs">
       <DependentUpon>DepartmentInfoControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentsForm.cs">
+    <Compile Include="Design\Forms\DepartmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartmentsForm.Designer.cs">
+    <Compile Include="Design\Forms\DepartmentsForm.Designer.cs">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\ICloseQuery.cs" />
@@ -122,59 +122,59 @@
     <Compile Include="EventsControl.Designer.cs">
       <DependentUpon>EventsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBase.cs">
+    <Compile Include="Design\Forms\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HeaderButton.cs">
+    <Compile Include="Design\Controls\HeaderButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="IconButton.cs">
+    <Compile Include="Design\Controls\IconButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="IconButtonSmall.cs">
+    <Compile Include="Design\Controls\IconButtonSmall.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Design\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Design\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartmentBlock.cs">
+    <Compile Include="Design\Controls\DepartmentBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DepartmentBlock.Designer.cs">
+    <Compile Include="Design\Controls\DepartmentBlock.Designer.cs">
       <DependentUpon>DepartmentBlock.cs</DependentUpon>
     </Compile>
     <Compile Include="EventHandlers.cs" />
-    <Compile Include="MemberInfoControl.cs">
+    <Compile Include="Design\Controls\MemberInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MemberInfoControl.Designer.cs">
+    <Compile Include="Design\Controls\MemberInfoControl.Designer.cs">
       <DependentUpon>MemberInfoControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberEditControl.cs">
+    <Compile Include="Design\Controls\MemberEditControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberEditControl.Designer.cs">
+    <Compile Include="Design\Controls\MemberEditControl.Designer.cs">
       <DependentUpon>MemberEditControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="MembersControl.cs">
+    <Compile Include="Design\Controls\MembersControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MembersControl.Designer.cs">
+    <Compile Include="Design\Controls\MembersControl.Designer.cs">
       <DependentUpon>MembersControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="BlocksList.cs">
+    <Compile Include="Design\Controls\BlocksList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BlocksList.Designer.cs">
+    <Compile Include="Design\Controls\BlocksList.Designer.cs">
       <DependentUpon>BlocksList.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuBar.cs">
+    <Compile Include="Design\Controls\MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MenuBar.Designer.cs">
+    <Compile Include="Design\Controls\MenuBar.Designer.cs">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Native.cs" />
@@ -182,52 +182,52 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Random.cs" />
-    <Compile Include="Entities\TaskDescription.cs" />
-    <Compile Include="Entities\Task.cs" />
-    <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\Place.cs" />
-    <Compile Include="Entities\Event.cs" />
-    <Compile Include="OverviewForm.cs">
+    <Compile Include="Database\Entities\TaskDescription.cs" />
+    <Compile Include="Database\Entities\Task.cs" />
+    <Compile Include="Database\Entities\Role.cs" />
+    <Compile Include="Database\Entities\Place.cs" />
+    <Compile Include="Database\Entities\Event.cs" />
+    <Compile Include="Design\Forms\OverviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OverviewForm.Designer.cs">
+    <Compile Include="Design\Forms\OverviewForm.Designer.cs">
       <DependentUpon>OverviewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Database\Entities\Department.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Member.cs" />
-    <Compile Include="TestForm.cs">
+    <Compile Include="Database\Entities\Member.cs" />
+    <Compile Include="Design\Forms\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm.Designer.cs">
+    <Compile Include="Design\Forms\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Theme.cs" />
-    <Compile Include="UIFont.cs" />
-    <Compile Include="MemberBlock.cs">
+    <Compile Include="Design\Theme.cs" />
+    <Compile Include="Design\UIFont.cs" />
+    <Compile Include="Design\Controls\MemberBlock.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MemberBlock.Designer.cs">
+    <Compile Include="Design\Controls\MemberBlock.Designer.cs">
       <DependentUpon>MemberBlock.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberBlockList.cs">
+    <Compile Include="Design\Controls\MemberBlockList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MemberBlockList.Designer.cs">
+    <Compile Include="Design\Controls\MemberBlockList.Designer.cs">
       <DependentUpon>MemberBlockList.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="BorderlessForm.resx">
+    <EmbeddedResource Include="Design\Controls\BorderlessForm.resx">
       <DependentUpon>BorderlessForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentControl.resx">
+    <EmbeddedResource Include="Design\Controls\DepartmentControl.resx">
       <DependentUpon>DepartmentControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentInfoControl.resx">
+    <EmbeddedResource Include="Design\Controls\DepartmentInfoControl.resx">
       <DependentUpon>DepartmentInfoControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentsForm.resx">
+    <EmbeddedResource Include="Design\Forms\DepartmentsForm.resx">
       <DependentUpon>DepartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\SolidComponent.resx">
@@ -236,30 +236,30 @@
     <EmbeddedResource Include="EventsControl.resx">
       <DependentUpon>EventsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Design\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartmentBlock.resx">
+    <EmbeddedResource Include="Design\Controls\DepartmentBlock.resx">
       <DependentUpon>DepartmentBlock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberInfoControl.resx">
+    <EmbeddedResource Include="Design\Controls\MemberInfoControl.resx">
       <DependentUpon>MemberInfoControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberEditControl.resx">
+    <EmbeddedResource Include="Design\Controls\MemberEditControl.resx">
       <DependentUpon>MemberEditControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MembersControl.resx">
+    <EmbeddedResource Include="Design\Controls\MembersControl.resx">
       <DependentUpon>MembersControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BlocksList.resx">
+    <EmbeddedResource Include="Design\Controls\BlocksList.resx">
       <DependentUpon>BlocksList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OverviewForm.resx">
+    <EmbeddedResource Include="Design\Forms\OverviewForm.resx">
       <DependentUpon>OverviewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuBar.resx">
+    <EmbeddedResource Include="Design\Controls\MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -272,16 +272,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="MemberBlock.resx">
+    <EmbeddedResource Include="Design\Controls\MemberBlock.resx">
       <DependentUpon>MemberBlock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberBlockList.resx">
+    <EmbeddedResource Include="Design\Controls\MemberBlockList.resx">
       <DependentUpon>MemberBlockList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
+    <EmbeddedResource Include="Design\Forms\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -319,9 +321,9 @@
     <None Include="Resources\Balyanitsa.A.Square.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Calendar.NET\Calendar.NET.csproj">
+    <ProjectReference Include="..\Calendar.NET\Calendar.csproj">
       <Project>{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}</Project>
-      <Name>Calendar.NET</Name>
+      <Name>Calendar</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

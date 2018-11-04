@@ -14,16 +14,16 @@ namespace MO_KHNUE
 {
     public partial class MembersControl : Form
     {
-        public MembersControl()
-        {
-            InitializeComponent();
+    public MembersControl()
+    {
+        InitializeComponent();
 
-            InitControl(DBContext.UpdateDbContext().Members);
-            memberInfoControl1.MemberChanged += (member) =>
-            {
-                InitControl(DBContext.CurrentContext.Members);
-            };
-        }
+        InitControl(DBContext.UpdateDbContext().Members);
+        memberInfoControl1.MemberChanged += (member) =>
+        {
+            InitControl(DBContext.CurrentContext.Members);
+        };
+    }
 
         public void InitControl(List<Member> members)
         {

@@ -1,33 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MO_KHNUE.Entities;
+﻿using MO_KHNUE.Entities;
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using static MO_KHNUE.Database.RedisDatabase;
 
 namespace MO_KHNUE.Database
 {
     public class DBContext
     {
+        public List<Member> Members { get; set; }
+        public List<Department> Departments { get; set; }
+
+        private static DBContext context = null;
+
         public void SaveChanges()
         {
-            //SetValue("Members", Members);
-            //SetValue("Departments", Departments);
             SetValue("Context", this);
         }
 
-        private static DBContext _context = null;
 
         public static DBContext CurrentContext
         {
             get
             {
-                if (_context == null)
-                    _context = UpdateDbContext();
+                if (context == null)
+                    context = UpdateDbContext();
 
-                return _context;
+                return context;
             }
         }
 
@@ -37,19 +37,19 @@ namespace MO_KHNUE.Database
 
             if (val != null)
             {
-                _context = JsonConvert.DeserializeObject<DBContext>(val);
+                context = JsonConvert.DeserializeObject<DBContext>(val);
             }
             else
             {
-                _context = new DBContext(true);
+                context = new DBContext(true);
             }
 
-            if (_context == null)
+            if (context == null)
             {
                 throw new JsonException("Cannot get context");
             }
 
-            return _context;
+            return context;
         }
 
         public static DBContext UpdateDbContext()
@@ -93,9 +93,5 @@ namespace MO_KHNUE.Database
             if (autoinit)
                 DBSeed.Seed(this);
         }
-
-        public List<Member> Members { get; set; }
-        public List<Department> Departments { get; set; }
     }
-
 }
